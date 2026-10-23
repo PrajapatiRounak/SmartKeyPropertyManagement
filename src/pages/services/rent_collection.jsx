@@ -24,9 +24,21 @@ const costCards = [
 ];
 
 const benefits = [
-    "Efficient Rent Collection with Housing Programs",
-    "Partnership with Housing Programs for Timely Payments",
-    "Clearing Arrears and Protecting Your Revenue",
+    {
+        icon: <img src="https://cdn.prod.website-files.com/685ee05b8ece331bff83d4b9/69c5751ebec9d2b60d3f7089_program.png"></img>,
+        title: "Efficient Rent Collection with Housing Programs",
+        text: "At Smart Key Property Management, we understand that rent collection isn't always straightforward, especially when it involves tenants receiving assistance through housing programs. That's why we specialize in rental assistance coordination to ensure that all tenants eligible for government housing support, such as CityFHEPS/HRA and Section-8, pay on time and meet their financial obligations.",
+    },
+    {
+        icon: <img src="https://cdn.prod.website-files.com/685ee05b8ece331bff83d4b9/69c575270609f329458e6385_handshake.png"></img>,
+        title: "Partnership with Housing Programs for Timely Payments",
+        text: "Our collaboration with housing programs NYC ensures smooth rent collection by streamlining the process and handling the paperwork required for rent collection housing programs. We make it easy for landlords by working directly with housing authorities to facilitate timely rent payments and avoid unnecessary delays in rent disbursement.",
+    },
+    {
+        icon: <img src="https://cdn.prod.website-files.com/685ee05b8ece331bff83d4b9/69c5759e26f4212d8a478096_secure-shield.png"></img>,
+        title: "Clearing Arrears and Protecting Your Revenue",
+        text: "Arrears recovery can be complicated, but with Smart Key's streamlined rent collection process, we help clear outstanding payments efficiently. Through our coordination with government-assisted programs, we protect landlords from revenue loss while adhering to regulatory standards. Our approach eliminates the risk of eviction delays, ensuring a stable cash flow and continued compliance.",
+    },
 ];
 
 const processSteps = [
@@ -110,29 +122,25 @@ const RentCollectionPage = () => {
 
             {/* TOP HERO SECTION */}
             <section className="relative h-[240px] md:h-[620px] overflow-hidden flex items-center">
-
                 <img
                     src="https://cdn.prod.website-files.com/685ee05b8ece331bff83d4b9/6a6395ce80d2691903f841da_Smartkey%20Website%20Hero%20Images.avif"
                     alt="Rent Collection Hero"
                     className="absolute inset-0 w-full h-full object-cover"
                 />
-
                 <div className="absolute inset-0 bg-[#07172a]/75"></div>
-
                 <div className="relative z-10 max-w-6xl mx-auto px-5 w-full">
 
                     <p className="text-white/70 text-xs mb-4">
                         Home / Services / Rent Collection
                     </p>
-
                     <h1 className="text-white text-4xl md:text-6xl font-bold leading-tight">
                         Rent Collection &
                         <br />
                         Arrears Recovery
                     </h1>
-
                 </div>
             </section>
+
             {/* Hero */}
             <section className="px-5 pt-16 pb-10 text-center">
                 <div className="max-w-5xl mx-auto">
@@ -149,7 +157,7 @@ const RentCollectionPage = () => {
                         At <a href="/" className="">Smart Key Property Management</a>, we assist landlords in navigating the complexities of rental property compliance. With ever-evolving landlord legal responsibilities in both NYC and NJ, it's essential to have a structured system that not only tracks rent but also addresses overdue payments in a compliant and efficient manner. We work closely with legal professionals to ensure that all arrears recovery actions adhere to local regulations, are well-organized and are fully documented. This process helps minimize financial risks, maintains consistent cash flow and ensures transparency for both landlords and tenants, so everyone stays informed and aligned throughout the lease cycle.
                     </p>
                     <button className="mt-7 bg-[#1f83c5] text-white text-xs md:text-sm px-7 py-3 rounded hover:bg-[#176da6] transition">
-                        Request a Free Property Consultation
+                        <a href="/contact">Request a Free Property Consultation</a>
                     </button>
                 </div>
             </section>
@@ -192,18 +200,24 @@ const RentCollectionPage = () => {
                         How Smart Key Efficiently Works with Housing Programs to Collect Rent and Clear Arrears
                     </h2>
                     <p>Smart Key Property Management partners with housing programs like CityFHEPS/HRA and Section-8 to streamline rent collection and clear arrears. We ensure timely payments and protect landlords from potential revenue loss.</p>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
-                        {benefits.map((item, index) => (
-                            <div
+                    <div className="flex flex-cols-1 sm:flex-cols-2 lg:flex-cols-4 gap-4 mt-8">
+                        {benefits.map((card, index) => (
+                        <div
                             key={index}
-                            className="bg-[#e9f8fb] border border-[#9ddff5] p-5 rounded-md"
-                            >
-                                <DollarSign className="mx-auto text-[#1f83c5]" size={26} />
-                                <h3 className="mt-4 font-semibold text-sm">{item}</h3>
-                                <p className="text-xs text-gray-600 mt-2 leading-relaxed">
-                                    At Smart Key Property Management, we understand that rent collection isn’t always straightforward, especially when it involves tenants receiving assistance through housing programs. That's why we specialize in rental assistance coordination to ensure that all tenants eligible for government housing support, such as CityFHEPS/HRA and Section-8, pay on time and meet their financial obligations.
-                                </p>
+                            className="bg-[#dff6ff] border border-[#7ed8ff] rounded-md p-4 md:p-5 flex flex-col md:flex-row gap-4 items-start text-left"
+                        >
+                            <div className="w-12 h-12 rounded bg-white text-[#1f83c5] grid-cols-2 items-center justify-center shrink-0">
+                            {card.icon}
                             </div>
+                            <div>
+                            <h3 className="text-base md:text-lg font-semibold">
+                                {card.title}
+                            </h3>
+                            <p className="text-sm text-gray-600 mt-1 leading-relaxed">
+                                {card.text}
+                            </p>
+                            </div>
+                        </div>
                         ))}
                     </div>
                 </div>
@@ -243,7 +257,6 @@ const RentCollectionPage = () => {
                                 >
                                     {step.no}
                                 </div>
-
                                 <motion.div
                                     initial={{ opacity: 0, y: 50 }}
                                     whileInView={{ opacity: 1, y: 0 }}
@@ -274,7 +287,7 @@ const RentCollectionPage = () => {
                         Why Landlords Choose Smart Key Property Management
                     </h2>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
                         {whyCards.map((item, index) => (
                             <div
                                 key={index}
@@ -284,17 +297,17 @@ const RentCollectionPage = () => {
                                 <h3 className="mt-4 text-sm font-semibold">{item}</h3>
                             </div>
                         ))}
-                        <div className="max-w-5xl mx-auto text-center">
-                            <button className="mt-7 bg-[#1f83c5] text-white text-xs md:text-sm px-7 py-3 rounded hover:bg-[#176da6] transition">
-                                Get Started Today
-                            </button>
-                        </div>
+                    </div>
+                    <div className="max-w-5xl mx-auto text-center">
+                        <button className="mt-7 bg-[#1f83c5] text-white text-xs md:text-sm px-7 py-3 rounded hover:bg-[#176da6] transition">
+                            <a href="/contact">Get Started Today</a>
+                        </button>
                     </div>
                 </div>
             </section>
 
             {/* Risk Management */}
-            <section className="px-5 py-12 bg-[#f7fbff]">
+            <section className="px-5 py-12">
                 <div className="max-w-5xl mx-auto text-center">
                     <h2 className="text-xl md:text-3xl font-bold">
                         Risk Management for Rental Properties in NYC and New Jersey
@@ -320,10 +333,12 @@ const RentCollectionPage = () => {
                     <p className="max-w-4xl mx-auto mt-4 text-sm text-gray-600 leading-relaxed">
                         Smart Key provides landlords with comprehensive compliance support and professional coordination, ensuring full alignment with legal requirements and operational best practices. Our team works closely with legal professionals to tackle any compliance challenges, helping landlords navigate the complexities of rental property management without risk. From ensuring all documentation is complete and accurate to coordinating with legal experts for dispute resolution, we offer peace of mind by handling the intricate details of property management. With Smart Key, landlords can trust that their property operations will remain compliant, organized, and legally secure throughout the rental lifecycle.
                     </p>
-                    <button className="mt-7 inline-flex items-center gap-2 bg-[#1f83c5] text-white text-xs md:text-sm px-7 py-3 rounded hover:bg-[#176da6] transition">
-                        <Phone size={16} />
-                        Start Lease Process
-                    </button>
+                    <a href="/contact">
+                        <button className="mt-7 inline-flex items-center gap-2 bg-[#1f83c5] text-white text-xs md:text-sm px-7 py-3 rounded hover:bg-[#176da6] transition">
+                            <Phone size={16} />
+                            <a href="/contact">Start Lease Process</a>
+                        </button>
+                    </a>
                 </div>
             </section>
             <section>
@@ -339,7 +354,8 @@ const RentCollectionPage = () => {
                title={"Own Property? We Make Managing It Effortless."}
                buttonText="Schedule Free Consultation"
                backgroundType="image"
-               backgroundSrc={""}
+               backgroundSrc={"https://cdn.prod.website-files.com/685ee05b8ece331bff83d4b9/68dc4ab5f573a246b9215237_Footer%20main.avif"}
+               buttonLink="/contact"
                />
             </section>
         </main>
