@@ -79,7 +79,7 @@ const BlogPage = () => {
       {/* Hero */}
       <section className="relative h-[250px] md:h-[320px] flex items-end overflow-hidden">
         <img
-          src="/blogs/blog-hero.jpg"
+          src="https://cdn.prod.website-files.com/685ee05b8ece331bff83d4b9/6a6395ce80d2691903f841da_Smartkey%20Website%20Hero%20Images.avif"
           alt="Blogs"
           className="absolute inset-0 w-full h-full object-cover"
         />

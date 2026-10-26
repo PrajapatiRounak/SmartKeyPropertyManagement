@@ -152,8 +152,8 @@ const RentCollectionPage = () => {
                     </h1>
                     <p className="w-auto mt-[23px] ml-[20px] mr-[20px]">
                         Rent collection is a fundamental aspect of property management that directly influences rental income and long-term business stability. In highly-regulated markets like New York City and New Jersey, managing rent payments requires much more than a basic tracking system it demands a robust, compliance-driven approach to ensure timely payments and avoid costly legal disputes.
-                    </p>
-                    <p className="">
+                    </p><br />
+                    <p className="w-auto mt-[23px] ml-[20px] mr-[20px]">
                         At <a href="/" className="">Smart Key Property Management</a>, we assist landlords in navigating the complexities of rental property compliance. With ever-evolving landlord legal responsibilities in both NYC and NJ, it's essential to have a structured system that not only tracks rent but also addresses overdue payments in a compliant and efficient manner. We work closely with legal professionals to ensure that all arrears recovery actions adhere to local regulations, are well-organized and are fully documented. This process helps minimize financial risks, maintains consistent cash flow and ensures transparency for both landlords and tenants, so everyone stays informed and aligned throughout the lease cycle.
                     </p>
                     <button className="mt-7 bg-[#1f83c5] text-white text-xs md:text-sm px-7 py-3 rounded hover:bg-[#176da6] transition">

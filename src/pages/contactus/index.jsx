@@ -1,7 +1,9 @@
 import React from "react";
 import { Send, User, Phone, MessageSquare } from "lucide-react";
+import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
 
 const ContactPage = () => {
+  
   return (
     <main className="bg-white">
       <section className="relative h-[280px] md:h-[360px] flex items-end overflow-hidden">

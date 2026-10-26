@@ -14,6 +14,8 @@ import AccountingReportingPage from "../pages/services/accounting_reporting.jsx"
 import MaintenanceServicesPage from "../pages/services/maintainance_report.jsx";
 import LegalCompliancePage from "../pages/services/legal_compliance.jsx";
 import PropertyComplianceSection from "../pages/services/property_compliance.jsx";
+import Queens from "@/pages/locations/Queens.jsx";
+
 
 export default function AppRoutes() {
   return (
@@ -34,6 +36,7 @@ export default function AppRoutes() {
         <Route path="/pricing" element={<PricingPage />} />
         <Route path="/portfolio" element={<PortfolioPage />} />
         <Route path="/blogs" element={<BlogPage />} />
+        <Route path="/locations/Queens" element={<Queens />}/>
         <Route path="/contact" element={<ContactPage />} />
         <Route path="*" element={<NotFound />} />
       </Route>

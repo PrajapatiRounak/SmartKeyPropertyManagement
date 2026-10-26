@@ -62,7 +62,7 @@ const PortfolioPage = () => {
     <main className="bg-white">
       <section className="relative h-[240px] md:h-[300px] flex items-end overflow-hidden">
         <img
-          src="/portfolio/portfolio-hero.jpg"
+          src="https://cdn.prod.website-files.com/685ee05b8ece331bff83d4b9/696e742f164325788fc86baa_Our%20Portfolio1.webp"
           alt="Portfolio Hero"
           className="absolute inset-0 w-full h-full object-cover"
         />
