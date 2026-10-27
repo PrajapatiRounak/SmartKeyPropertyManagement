@@ -4,7 +4,7 @@ import { useEffect, useId, useLayoutEffect, useMemo, useRef, useState } from 're
 import { gsap } from 'gsap';
 
 const VIEW_W = 1200;
-const VIEW_H = 520;
+const VIEW_H = 120;
 const CX = VIEW_W / 2;
 const CY = VIEW_H / 2;
 const EDGE_PAD = 6;
@@ -107,19 +107,19 @@ const inkOn = color => {
 };
 
 const TextLoop = ({
-  text = 'React ✦ Bits',
-  shape = 'wave',
+  text = '',
+  shape = 'line',
   path,
   speed = 90,
   direction = 'forward',
-  separator = '✦',
+  separator = '',
   curviness = 90,
   tilt = 0,
   fontSize = 46,
   fontWeight = 800,
-  letterSpacing = 50,
+  letterSpacing = 2,
   uppercase = true,
-  color="black",
+  color,
   ribbon = true,
   ribbonColor = '#5227FF',
   ribbonWidth = 86,
@@ -182,8 +182,12 @@ const TextLoop = ({
   }, [text, separator, uppercase]);
 
   const textStyle = useMemo(
-    () => ({ fontSize: `${fontSize}px`, fontWeight, letterSpacing: `${letterSpacing}px` }),
-    [fontSize, fontWeight, letterSpacing]
+      () => ({
+          fontSize: `clamp(12px, 1.5vw, ${fontSize}px)`,
+          fontWeight,
+          letterSpacing: `clamp(0px, 0.15vw, ${letterSpacing}px)`,
+      }),
+      [fontSize, fontWeight, letterSpacing]
   );
 
   useIsomorphicLayoutEffect(() => {

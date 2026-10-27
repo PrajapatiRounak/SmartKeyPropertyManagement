@@ -17,7 +17,7 @@ const aboutLinks = [
 const servicesLinks = [
   {
     name: "Rent Collection & Arrears Recovery",
-    path: "/services//rent-collection-and-arrears-recovery",
+    path: "/services/rent-collection-and-arrears-recovery",
   },
   {
     name: "Lease Administration & Renewals",
@@ -52,11 +52,11 @@ const appFolioLinks = [
   },
 ];
 
-const locations =[
+const locations = [
   {
     name: "Queens",
-    path: "/locations/queens"
-  }
+    path: "/locations/queens",
+  },
 ];
 
 const Navbar = () => {
@@ -65,24 +65,38 @@ const Navbar = () => {
   const [mobileAppFolioOpen, setMobileAppFolioOpen] = useState(false);
 
   return (
-    <nav className="absolute top-0 left-0 w-full z-50">
-      <div className="max-w-7xl mx-auto px-4 pt-2 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <a href="/"><img src={logo} alt="logo" className="w-40 h-40" /></a>
+    <nav className="absolute top-0 left-0 z-50 w-full">
+      <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-2">
+
+        {/* Logo */}
+        <div className="flex items-center">
+          <Link to="/">
+            <img
+              src={logo}
+              alt="Smart Key Property Management"
+              className="h-24 w-24 object-contain sm:h-28 sm:w-28 md:h-32 md:w-32"
+            />
+          </Link>
         </div>
-        <ul className="hidden md:flex items-center gap-8 text-white text-xl font-medium">
-          {/* Home Nav Link */}
+
+        {/* Desktop Navigation */}
+        <ul className="hidden items-center gap-6 text-lg font-medium text-white lg:flex xl:gap-8">
+
+          {/* Home */}
           <li>
-            <Link 
-            to="/"
-            className="text-l font-medium hover:text-[#12a8ff] transition"
-            >Home
+            <Link
+              to="/"
+              className="font-medium transition hover:text-[#12a8ff]"
+            >
+              Home
             </Link>
           </li>
-          {/* About Nav Link */}
+
+          {/* About */}
           <li className="group relative">
-            <Link 
-            className="flex items-center gap-1 text-l font-medium hover:text-[#12a8ff] transition"
+            <Link
+              to="/about"
+              className="flex items-center gap-1 font-medium transition hover:text-[#12a8ff]"
             >
               About
               <ChevronDown
@@ -93,39 +107,43 @@ const Navbar = () => {
 
             <div className="absolute left-0 top-full h-5 w-full"></div>
 
-            <div className="grid place-items-start min-h-11/12 absolute left-0 top-[145%] min-w-40 bg-[#f7f4ee] rounded-xl shadow-2xl p-4 opacity-0 invisible translate-y-4 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300">
-              {aboutLinks.map((item, index) => (
-                <Link
-                  key={index}
-                  to={item.path}
-                  className="text-[#17263d] text-lg/relaxed font-medium hover:text-[#12a8ff] transition"
-                >
-                  {item.name}
-                </Link>
-              ))}
+            <div className="invisible absolute left-0 top-[145%] min-w-40 translate-y-4 rounded-xl bg-[#f7f4ee] p-4 opacity-0 shadow-2xl transition-all duration-300 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+              <div className="flex flex-col gap-2">
+                {aboutLinks.map((item, index) => (
+                  <Link
+                    key={index}
+                    to={item.path}
+                    className="text-lg font-medium leading-relaxed text-[#17263d] transition hover:text-[#12a8ff]"
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
             </div>
           </li>
-          {/* Services Nav Link */}
+
+          {/* Services */}
           <li className="group relative">
-            <Link
-              className="flex items-center gap-1 group-hover:text-[#12a8ff] transition"
+            <button
+              type="button"
+              className="flex cursor-pointer items-center gap-1 font-medium transition group-hover:text-[#12a8ff]"
             >
               Services
               <ChevronDown
                 size={16}
                 className="transition-transform duration-300 group-hover:rotate-180"
               />
-            </Link>
+            </button>
 
             <div className="absolute left-0 top-full h-5 w-full"></div>
 
-            <div className="absolute left-0 top-[145%] w-90 bg-[#f7f4ee] rounded-xl shadow-2xl p-4 opacity-0 invisible translate-y-4 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300">
-              <div className="text-nowrap text-start flex flex-col gap-3">
+            <div className="invisible absolute left-0 top-[145%] w-80 translate-y-4 rounded-xl bg-[#f7f4ee] p-4 opacity-0 shadow-2xl transition-all duration-300 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+              <div className="flex flex-col gap-3 text-left">
                 {servicesLinks.map((item, index) => (
                   <Link
                     key={index}
                     to={item.path}
-                    className="text-[#17263d] text-lg/relaxed font-medium hover:text-[#12a8ff] transition"
+                    className="text-lg font-medium leading-relaxed text-[#17263d] transition hover:text-[#12a8ff]"
                   >
                     {item.name}
                   </Link>
@@ -133,74 +151,49 @@ const Navbar = () => {
               </div>
             </div>
           </li>
-          {/* Pricing Nav Link */}
-          <li className="group relative">
+
+          {/* Pricing */}
+          <li>
             <Link
-            to="/pricing"
-            className="text-l font-medium hover:text-[#12a8ff] transition"
-            >Pricing</Link>
+              to="/pricing"
+              className="font-medium transition hover:text-[#12a8ff]"
+            >
+              Pricing
+            </Link>
           </li>
-          {/* Portfolio Nav Link */}
-          <li className="group relative">
+
+          {/* Portfolio */}
+          <li>
             <Link
-            to="/portfolio"
-            className="text-l font-medium hover:text-[#12a8ff] transition"
-            >Portfolio</Link>
+              to="/portfolio"
+              className="font-medium transition hover:text-[#12a8ff]"
+            >
+              Portfolio
+            </Link>
           </li>
-          {/* AppFolio Nav Link */}
+
+          {/* AppFolio */}
           <li className="group relative">
-            <Link
-              className="flex items-center gap-1 group-hover:text-[#12a8ff] transition"
+            <button
+              type="button"
+              className="flex cursor-pointer items-center gap-1 font-medium transition group-hover:text-[#12a8ff]"
             >
               AppFolio
               <ChevronDown
                 size={16}
                 className="transition-transform duration-300 group-hover:rotate-180"
               />
-            </Link>
+            </button>
 
             <div className="absolute left-0 top-full h-5 w-full"></div>
 
-            <div className="absolute left-0 top-[145%] min-w-40 bg-[#f7f4ee] rounded-xl shadow-2xl p-4 opacity-0 invisible translate-y-4 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300">
-              {appFolioLinks.map((item, index) => (
-                <Link
-                  key={index}
-                  to={item.path}
-                  className="text-[#17263d] text-lg/relaxed font-medium hover:text-[#12a8ff] transition"
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
-          </li>
-          {/* Blogs Nav Link */}
-          <li className="group relative">
-            <Link
-            to="/blogs"
-            className="text-l font-medium hover:text-[#12a8ff] transition"
-            >Blogs</Link>
-          </li>
-          {/* Location Nav Link */}
-          <li className="group relative">
-            <Link
-              className="flex items-center gap-1 group-hover:text-[#12a8ff] transition"
-            >
-              Locations
-              <ChevronDown
-                size={16}
-                className="transition-transform duration-300 group-hover:rotate-180"
-              />
-            </Link>
-
-            <div className="absolute left-0 top-full h-5 w-full"></div>
-
-            <div className="absolute left-0 top-[145%] w-90 bg-[#f7f4ee] rounded-xl shadow-2xl p-4 opacity-0 invisible translate-y-4 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300">
-              <div className="text-nowrap text-start flex flex-col gap-3">
-                {locations.map((item, index) => (
+            <div className="invisible absolute left-0 top-[145%] min-w-40 translate-y-4 rounded-xl bg-[#f7f4ee] p-4 opacity-0 shadow-2xl transition-all duration-300 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+              <div className="flex flex-col gap-2">
+                {appFolioLinks.map((item, index) => (
                   <Link
                     key={index}
                     to={item.path}
-                    className="text-[#17263d] text-lg/relaxed font-medium hover:text-[#12a8ff] transition"
+                    className="text-lg font-medium leading-relaxed text-[#17263d] transition hover:text-[#12a8ff]"
                   >
                     {item.name}
                   </Link>
@@ -209,37 +202,95 @@ const Navbar = () => {
             </div>
           </li>
 
+          {/* Blogs */}
+          <li>
+            <Link
+              to="/blogs"
+              className="font-medium transition hover:text-[#12a8ff]"
+            >
+              Blogs
+            </Link>
+          </li>
+
+          {/* Locations */}
+          <li className="group relative">
+            <button
+              type="button"
+              className="flex cursor-pointer items-center gap-1 font-medium transition group-hover:text-[#12a8ff]"
+            >
+              Locations
+              <ChevronDown
+                size={16}
+                className="transition-transform duration-300 group-hover:rotate-180"
+              />
+            </button>
+
+            <div className="absolute left-0 top-full h-5 w-full"></div>
+
+            <div className="invisible absolute left-0 top-[145%] w-40 translate-y-4 rounded-xl bg-[#f7f4ee] p-4 opacity-0 shadow-2xl transition-all duration-300 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+              <div className="flex flex-col gap-2 text-left">
+                {locations.map((item, index) => (
+                  <Link
+                    key={index}
+                    to={item.path}
+                    className="text-lg font-medium leading-relaxed text-[#17263d] transition hover:text-[#12a8ff]"
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </li>
         </ul>
 
-        <div className="hidden md:block">
+        {/* Desktop Contact */}
+        <div className="hidden lg:block">
           <Link
             to="/contact"
-            className="border border-white text-white px-6 py-2 rounded-full hover:bg-white hover:text-black transition duration-300 text-sm md:text-base font-medium"
+            className="rounded-full border border-white px-6 py-2 text-sm font-medium text-white transition duration-300 hover:bg-white hover:text-black xl:text-base"
           >
             Contact Us
           </Link>
         </div>
 
-        <div className="md:hidden text-white">
-          <button onClick={() => setIsOpen(!isOpen)}>
+        {/* Mobile Menu Button */}
+        <div className="text-white lg:hidden">
+          <button
+            type="button"
+            onClick={() => setIsOpen(!isOpen)}
+            className="cursor-pointer"
+            aria-label="Toggle navigation menu"
+          >
             {isOpen ? <X size={26} /> : <Menu size={26} />}
           </button>
         </div>
       </div>
 
+      {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden bg-[#07172a] text-white px-6 py-6 space-y-4">
-          <Link to="/" className="block">
+        <div className="flex flex-col gap-4 bg-[#07172a] px-6 py-6 text-white lg:hidden">
+
+          <Link
+            to="/"
+            className="block"
+            onClick={() => setIsOpen(false)}
+          >
             Home
           </Link>
-          
-          <Link to="/about" className="block">
+
+          <Link
+            to="/about"
+            className="block"
+            onClick={() => setIsOpen(false)}
+          >
             About
           </Link>
 
+          {/* Mobile Services */}
           <button
+            type="button"
             onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-            className="w-full flex items-center justify-between"
+            className="flex w-full cursor-pointer items-center justify-between"
           >
             Services
             <ChevronDown
@@ -251,26 +302,41 @@ const Navbar = () => {
           </button>
 
           {mobileServicesOpen && (
-            <div className="pl-4 space-y-3">
+            <div className="flex flex-col gap-3 pl-4">
               {servicesLinks.map((item, index) => (
-                <Link key={index} to={item.path} className="block text-sm">
+                <Link
+                  key={index}
+                  to={item.path}
+                  className="block text-sm"
+                  onClick={() => setIsOpen(false)}
+                >
                   {item.name}
                 </Link>
               ))}
             </div>
           )}
 
-          <Link to="/pricing" className="block">
+          <Link
+            to="/pricing"
+            className="block"
+            onClick={() => setIsOpen(false)}
+          >
             Pricing
           </Link>
 
-          <Link to="/portfolio" className="block">
+          <Link
+            to="/portfolio"
+            className="block"
+            onClick={() => setIsOpen(false)}
+          >
             Portfolio
           </Link>
 
+          {/* Mobile AppFolio */}
           <button
+            type="button"
             onClick={() => setMobileAppFolioOpen(!mobileAppFolioOpen)}
-            className="w-full flex items-center justify-between"
+            className="flex w-full cursor-pointer items-center justify-between"
           >
             AppFolio
             <ChevronDown
@@ -282,26 +348,55 @@ const Navbar = () => {
           </button>
 
           {mobileAppFolioOpen && (
-            <div className="pl-4 space-y-3">
+            <div className="flex flex-col gap-3 pl-4">
               {appFolioLinks.map((item, index) => (
-                <Link key={index} to={item.path} className="block text-sm">
+                <Link
+                  key={index}
+                  to={item.path}
+                  className="block text-sm"
+                  onClick={() => setIsOpen(false)}
+                >
                   {item.name}
                 </Link>
               ))}
             </div>
           )}
 
-          <Link to="/blogs" className="block">
+          <Link
+            to="/blogs"
+            className="block"
+            onClick={() => setIsOpen(false)}
+          >
             Blogs
           </Link>
 
-          <link to="/location" className="block">
+          {/* Mobile Locations */}
+          <button
+            type="button"
+            onClick={() => {}}
+            className="flex w-full cursor-pointer items-center justify-between"
+          >
             Locations
-          </link>
+            <ChevronDown size={16} />
+          </button>
+
+          <div className="flex flex-col gap-3 pl-4">
+            {locations.map((item, index) => (
+              <Link
+                key={index}
+                to={item.path}
+                className="block text-sm"
+                onClick={() => setIsOpen(false)}
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
 
           <Link
             to="/contact"
-            className="block border border-white text-center py-2 rounded-full mt-3"
+            className="mt-2 block rounded-full border border-white py-2 text-center"
+            onClick={() => setIsOpen(false)}
           >
             Contact Us
           </Link>
@@ -312,91 +407,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-
-
-
-
-// import React, { useState } from "react";
-// import { Link } from "react-router-dom";
-// import { ChevronDown, Menu, X } from "lucide-react";
-// import logo from "../../assets/logos/smartkey logo.png";
-
-// const Navbar = () => {
-//   const [isOpen, setIsOpen] = useState(false);
-
-//   return (
-//     <nav className="absolute top-0 left-0 w-full z-50">
-//       <div className="max-w-7xl mx-auto px-2 pt-2 flex items-center justify-between">
-
-//         {/* Logo */}
-//         <div className="flex items-center gap-3">
-//           <img src={logo} alt="logo" className="w-20 h-auto" />
-//         </div>
-
-//         {/* Desktop Menu */}
-//         <ul className="hidden md:flex items-center gap-8 text-white text-sm font-medium">
-//           <li><Link to="/">Home</Link></li>
-
-//           <li className="flex items-center gap-1 cursor-pointer">
-//             <Link to="/about">About</Link>
-//             <ChevronDown size={16} />
-//           </li>
-
-//           <li className="flex items-center gap-1 cursor-pointer">
-//             <Link to="/services">Services</Link>
-//             <ChevronDown size={16} />
-//           </li>
-
-//           <li><Link to="/pricing">Pricing</Link></li>
-//           <li><Link to="/portfolio">Portfolio</Link></li>
-
-//           <li className="flex items-center gap-1 cursor-pointer">
-//             <Link to="/appfolio">AppFolio</Link>
-//             <ChevronDown size={16} />
-//           </li>
-
-//           <li><Link to="/blogs">Blogs</Link></li>
-//         </ul>
-
-//         {/* Contact Button */}
-//         <div className="hidden md:block">
-//           <Link
-//             to="/contact"
-//             className="border border-white text-white px-6 py-2 rounded-full hover:bg-white hover:text-black transition duration-300"
-//           >
-//             Contact Us
-//           </Link>
-//         </div>
-
-//         {/* Mobile Menu Button */}
-//         <div className="md:hidden text-white">
-//           <button onClick={() => setIsOpen(!isOpen)}>
-//             {isOpen ? <X size={26} /> : <Menu size={26} />}
-//           </button>
-//         </div>
-//       </div>
-
-//       {/* Mobile Menu */}
-//       {isOpen && (
-//         <div className="md:hidden bg-black bg-opacity-95 text-white px-6 pb-6 space-y-4">
-//           <Link to="/" className="block">Home</Link>
-//           <Link to="/about" className="block">About</Link>
-//           <Link to="/services" className="block">Services</Link>
-//           <Link to="/pricing" className="block">Pricing</Link>
-//           <Link to="/portfolio" className="block">Portfolio</Link>
-//           <Link to="/appfolio" className="block">AppFolio</Link>
-//           <Link to="/blogs" className="block">Blogs</Link>
-//           <Link
-//             to="/contact"
-//             className="block border border-white text-center py-2 rounded-full mt-3"
-//           >
-//             Contact Us
-//           </Link>
-//         </div>
-//       )}
-//     </nav>
-//   );
-// };
-
-// export default Navbar;
