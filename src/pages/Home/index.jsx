@@ -69,21 +69,35 @@ const HomePage = () => {
       buttonText="Schedule Free Consultation"
       buttonLink="/contact"
       />
-      {/* <MyMap /> */}
       <main className="bg-white text-[#0f2742]">
-        <section className="max-w-6xl mx-auto px-5 py-10 text-center">
-          <h1 className="text-2xl md:text-5xl font-bold leading-tight">
-            Full-Service Property Management in NYC for Landlords
-          </h1>
-          <p className="mt-4 max-w-3xl mx-auto text-sm md:text-base text-gray-600">
-            Providing tenant screening, rent collection, maintenance coordination and full-service property management for small and mid-size residential properties across New York City. 
-            <br /><br />
-            Smart Key Property Management delivers structured, process-driven oversight designed to protect rental income and reduce operational risk. From disciplined tenant placement to proactive maintenance and organized financial tracking, we manage each stage of the rental lifecycle with consistency, accountability and clear communication.
-          </p>
-          <button className="mt-6 bg-[#0f2742] text-white px-7 py-3 rounded-full text-sm font-semibold hover:bg-[#12a8ff] transition">
-            Request a Free Property Consultation
-          </button>
+        {/* Home Page Property Management */}
+        <section className="bg-white px-5 py-12 sm:px-8 md:px-10 lg:px-16 lg:py-20">
+            <div className="w-full max-w-6xl mx-auto flex flex-col items-center text-center">
+
+                <h1 className="w-full max-w-5xl text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                    Full-Service Property Management in NYC for Landlords
+                </h1>
+
+                <p className="w-full max-w-5xl mt-8 text-base sm:text-lg md:text-xl leading-relaxed">
+                    Providing tenant screening, rent collection, maintenance coordination and full-service property management for small and mid-size residential properties across New York City.
+                </p>
+                <p className="w-full max-w-5xl mt-8 text-base sm:text-lg md:text-xl leading-relaxed">
+                  Smart Key Property Management delivers structured, process-driven oversight designed to protect rental income and reduce operational risk. From disciplined tenant placement to proactive maintenance and organized financial tracking, we manage each stage of the rental lifecycle with consistency, accountability and clear communication.
+                </p>
+
+                <div className="mt-8 flex justify-center">
+                    <a
+                        href="/contact"
+                        className="inline-block bg-[#1f83c5] text-white font-semibold text-sm sm:text-base px-7 sm:px-10 py-4 rounded-3xl hover:bg-[#176da6] transition"
+                    >
+                        Request a Property Consultation
+                    </a>
+                </div>
+            </div>
         </section>
+
+      
+
         <section className="max-w-6xl mx-auto px-5 py-8 text-center">
           <h2 className="text-xl md:text-3xl font-bold">
             Complete Property Management Solutions For NYC Landlords
@@ -92,7 +106,7 @@ const HomePage = () => {
             <ServiceBlock
               title="Find Reliable Tenants Without Long Vacancies"
               text="Smart Key Property Management helps landlords secure reliable tenants through structured background, credit, income and rental history screening. We reduce vacancy by leveraging NYC housing programs like CityFHEPS and managing unit approvals efficiently, with rent payments processed through DSS/HRA for added stability. Our strong network of brokers and real estate agents keeps a steady flow of prospects, so properties stay occupied and cash flow remains consistent."
-              // image="/images/property-1.jpg"
+              image="https://res.cloudinary.com/kj98z6s1/image/upload/v1793208113/69ab558954d4c9c69e6c4bf2_result.avif"
             />
             <ServiceBlock
               reverse
