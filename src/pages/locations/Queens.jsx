@@ -1,7 +1,7 @@
 import React from 'react';
 import TextLoop from '@/components/Loop/TextLoop';
 import { Link } from 'react-router';
-import { motion } from 'framer-motion';
+import FooterCTA from '@/components/footerCTA/FooterCTA';
 import FAQ from '@/components/faq';
 import Hero from '@/components/hero';
 import { ArrowRight } from 'lucide-react';
@@ -85,21 +85,21 @@ function Queens() {
         {
             title: "179-15 144th Ave",
             address: "179-15 144th Ave, Queens, NY 11434",
-            image: <img src='https://cdn.prod.website-files.com/685ee05b8ece331bff83d4b9/6ab54b9faa40b5b2b09ca8ea_prop_three.avif' srcSet='https://cdn.prod.website-files.com/685ee05b8ece331bff83d4b9/6ab54b9faa40b5b2b09ca8ea_prop_three-p-500.avif 500w, https://cdn.prod.website-files.com/685ee05b8ece331bff83d4b9/6ab54b9faa40b5b2b09ca8ea_prop_three.avif 525w' loading="lazy"></img>,
+            image: 'https://cdn.prod.website-files.com/685ee05b8ece331bff83d4b9/6ab54b9faa40b5b2b09ca8ea_prop_three.avif',
             link: "/portfolio",
             alt: "Residential property at 179-15 144th Avenue, Queens",
         },
         {
             title: "186-11 122nd Ave",
             address: "186-11 122nd Ave, Queens, NY 11413",
-            image: <img src='https://cdn.prod.website-files.com/685ee05b8ece331bff83d4b9/6ab54ba2519406c2520d5223_prop_two.avif' srcSet='https://cdn.prod.website-files.com/685ee05b8ece331bff83d4b9/6ab54ba2519406c2520d5223_prop_two-p-500.avif 500w, https://cdn.prod.website-files.com/685ee05b8ece331bff83d4b9/6ab54ba2519406c2520d5223_prop_two.avif 629w' loading="lazy"></img>,
+            image: 'https://cdn.prod.website-files.com/685ee05b8ece331bff83d4b9/6ab54ba2519406c2520d5223_prop_two.avif',
             link: "/portfolio",
             alt: "Residential property at 186-11 122nd Avenue, Queens",
         },
         {
             title: "114-33 194th St",
             address: "114-33 194th St, Queens, NY 11412",
-            image: <img src='https://cdn.prod.website-files.com/685ee05b8ece331bff83d4b9/6ab54ba3402dff61b3346cc0_prop_one.avif' loading="lazy"></img>,
+            image: 'https://cdn.prod.website-files.com/685ee05b8ece331bff83d4b9/6ab54ba3402dff61b3346cc0_prop_one.avif',
             link: "/portfolio",
             alt: "Residential property at 114-33 194th Street, Queens",
         },
@@ -176,7 +176,7 @@ function Queens() {
                         className="text-blue-500 hover:underline"
                     >
                         Smart Key Property Management
-                    </a>{" "}
+                    </a>
                     provides reliable Queens property management support for residential
                     landlords who need organized operations, responsive communication and
                     consistent property oversight. From tenant coordination and rent
@@ -197,6 +197,7 @@ function Queens() {
 
             </div>
         </section>
+        
         {/* Text Loop */}
         <section className="w-full overflow-hidden bg-white py-10 sm:py-14">
             <div className="mx-auto w-full max-w-7xl px-5 sm:px-8">
@@ -375,37 +376,51 @@ function Queens() {
             </div>
         </section>
 
-        {/* Property Cards */}
-        <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-6 px-4 sm:grid-cols-2 sm:gap-7 sm:px-6 lg:grid-cols-3 lg:gap-8 lg:px-8">
-            {properties.map((item) => (
-                <Link
-                    key={item.title}
-                    to={item.link}
-                    className="group mx-auto block w-full min-w-0 max-w-md overflow-hidden rounded-2xl border border-[#e7edf3] bg-white shadow-[0_8px_30px_rgba(23,57,95,0.06)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(23,57,95,0.12)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#6482a3] lg:max-w-none"
-                >
-                    {/* Property Image */}
-                    <div className="aspect-[4/5] w-full overflow-hidden bg-gray-100">
-                        <img
-                            src={item.image}
-                            alt={item.alt}
-                            loading="lazy"
-                            className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                        />
-                    </div>
+        
+        {/* Properties Under Our Management */}
+        <section className="bg-white px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+            <div className="mx-auto w-full max-w-7xl">
 
-                    {/* Property Details */}
-                    <div className="p-4 sm:p-5 lg:p-6">
-                        <h3 className="break-words text-lg font-semibold leading-snug text-[#202b40] sm:text-xl lg:text-2xl">
-                            {item.title}
-                        </h3>
+                {/* Section Heading */}
+                <h2 className="mb-8 text-center text-2xl font-semibold leading-tight tracking-tight text-[#202b40] sm:mb-10 sm:text-3xl lg:text-4xl">
+                    A Look at Properties Under Our Management
+                </h2>
 
-                        <p className="mt-2 break-words text-sm leading-6 text-gray-600 sm:text-base">
-                            {item.address}
-                        </p>
-                    </div>
-                </Link>
-            ))}
-        </div>
+                {/* Property Cards */}
+                <div className="flex flex-wrap justify-center gap-6 sm:gap-7 lg:gap-8">
+                    {properties.map((item) => (
+                        <Link
+                            key={item.title}
+                            to={item.link}
+                            className="group block w-full min-w-0 max-w-md overflow-hidden rounded-2xl border border-[#e7edf3] bg-white shadow-[0_8px_30px_rgba(23,57,95,0.06)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(23,57,95,0.12)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#6482a3] sm:w-[calc(50%-14px)] lg:w-[calc(33.333%-22px)]"
+                        >
+                            {/* Property Image */}
+                            <div className="aspect-[4/5] w-full overflow-hidden bg-gray-100">
+                                <img
+                                    src={item.image}
+                                    alt={item.alt}
+                                    loading="lazy"
+                                    className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                                />
+                            </div>
+
+                            {/* Property Details */}
+                            <div className="p-4 sm:p-5 lg:p-6">
+                                <h3 className="break-words text-lg font-semibold leading-snug text-[#202b40] sm:text-xl lg:text-2xl">
+                                    {item.title}
+                                </h3>
+
+                                <p className="mt-2 break-words text-sm leading-6 text-gray-600 sm:text-base">
+                                    {item.address}
+                                </p>
+                            </div>
+                        </Link>
+                    ))}
+                </div>
+
+            </div>
+        </section>
+
 
         {/* Why Section */}
         <section className="bg-white py-16 md:py-20 lg:py-24 px-5 sm:px-8 lg:px-10 text-center">
@@ -445,6 +460,7 @@ function Queens() {
 
             </div>
         </section>
+
         {/* FAQ */}
         <section>
             <div>
@@ -454,15 +470,14 @@ function Queens() {
                 />
             </div>
         </section>
-        <section>
-          <Hero 
-          title={"Own Property? We Make Managing It Effortless."}
-          buttonText="Schedule Free Consultation"
-          backgroundType="image"
-          backgroundSrc={"https://cdn.prod.website-files.com/685ee05b8ece331bff83d4b9/68dc4ab5f573a246b9215237_Footer%20main.avif"}
-          buttonLink="/contact"
-          />
-      </section>
+
+        {/* Footer CTA */}
+        <FooterCTA 
+        backgroundSrc={'https://res.cloudinary.com/kj98z6s1/image/upload/v1793208101/Footer_SamrtKey.avif'}
+        title={'Own Property? We Make Managing It Effortless.'}
+        buttonText='Schedule Free Consultation'
+        buttonLink='/contact'
+        />
 
     </main>
   )

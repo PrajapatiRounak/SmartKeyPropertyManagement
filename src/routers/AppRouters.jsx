@@ -15,6 +15,8 @@ import MaintenanceServicesPage from "../pages/services/maintainance_report.jsx";
 import LegalCompliancePage from "../pages/services/legal_compliance.jsx";
 import PropertyComplianceSection from "../pages/services/property_compliance.jsx";
 import Queens from "@/pages/locations/Queens.jsx";
+import Bronx from "@/pages/locations/Bronx.jsx";
+import Manhattan from "@/pages/locations/Manhattan.jsx";
 
 
 export default function AppRoutes() {
@@ -37,6 +39,8 @@ export default function AppRoutes() {
         <Route path="/portfolio" element={<PortfolioPage />} />
         <Route path="/blogs" element={<BlogPage />} />
         <Route path="/locations/Queens" element={<Queens />}/>
+        <Route path="/locations/Bronx" element={<Bronx />}/>
+        <Route path="/locations/Manhattan" element={<Manhattan />}/>
         <Route path="/contact" element={<ContactPage />} />
         <Route path="*" element={<NotFound />} />
       </Route>

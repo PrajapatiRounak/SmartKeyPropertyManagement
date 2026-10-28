@@ -57,6 +57,14 @@ const locations = [
     name: "Queens",
     path: "/locations/queens",
   },
+  {
+    name: "Bronx",
+    path: "/locations/bronx",
+  },
+  {
+    name: "Manhattan",
+    path: "/locations/manhattan",
+  },
 ];
 
 const Navbar = () => {
