@@ -1,35 +1,28 @@
 import React from "react";
+import FooterCTA from "@/components/footerCTA/FooterCTA";
 import FAQ from "@/components/faq";
-import Hero from "@/components/hero";
+import FeatureBlock from "@/components/featureBlock/FeatureBlock";
 import { motion } from "framer-motion";
-import {
-  FileText,
-  CalendarDays,
-  RefreshCw,
-  ShieldCheck,
-  AlertTriangle,
-  ClipboardCheck,
-  Phone,
-} from "lucide-react";
+import { FileText, CalendarDays, RefreshCw, ShieldCheck, AlertTriangle, ClipboardCheck, Phone,} from "lucide-react";
 
 const includeItems = [
   {
-    icon: <FileText size={22} />,
+    icon: 'https://res.cloudinary.com/kj98z6s1/image/upload/v1793208166/Lease_Task-Check_SmartKey_result.avif',
     title: "Lease Preparation & Documentation",
     text: "Lease administration involves more than preparing agreements. A structured process helps landlords manage renewals, tenant communication, documentation and lease tracking without operational gaps or missed timelines.",
   },
   {
-    icon: <CalendarDays size={22} />,
+    icon: 'https://res.cloudinary.com/kj98z6s1/image/upload/v1793208165/Lease_3_SmartKey_result.avif',
     title: "Lease Renewal Coordination",
     text: "Renewal timelines are tracked proactively to avoid delays and vacancy gaps. Structured lease renewal management helps streamline tenant communication, renewal approvals and updated lease processing.",
   },
   {
-    icon: <RefreshCw size={22} />,
+    icon: 'https://res.cloudinary.com/kj98z6s1/image/upload/v1793208164/Lease_4_SmartKey_result.avif',
     title: "Tenant Communication & Follow-Ups",
     text: "Consistent communication helps ensure tenants receive renewal notices, documentation requests and follow-up updates on time, reducing confusion and delayed responses.",
   },
   {
-    icon: <ShieldCheck size={22} />,
+    icon: 'https://res.cloudinary.com/kj98z6s1/image/upload/v1793208167/Lease_5_SmartKey_result.avif',
     title: "Compliance & Lease Tracking",
     text: "A structured lease tracking system helps monitor active leases, renewal dates and documentation status while supporting better lease compliance and operational oversight across rental properties.",
   },
@@ -130,66 +123,79 @@ const faqData = [
 const LeaseAdministrationPage = () => {
   return (
     <main className="bg-white text-[#17395f]">
-      {/* Top Hero */}
-      <section className="relative h-[240px] md:h-[520px] overflow-hidden flex items-center">
-                <img
-                    src="https://cdn.prod.website-files.com/685ee05b8ece331bff83d4b9/6a6395ce80d2691903f841da_Smartkey%20Website%20Hero%20Images.avif"
-                    alt="Rent Collection Hero"
-                    className="absolute inset-0 w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-[#07172a]/75"></div>
-                <div className="relative z-10 max-w-6xl mx-auto px-5 w-full">
-                    <p className="text-white/70 text-xs mb-4">
-                        <a href="/">Home / Services / Lease Administration & Renewals</a>
-                    </p>
-                    <h1 className="text-white text-4xl md:text-6xl font-bold leading-tight">
-                        Lease Administration & <br /> Renewals
-                    </h1>
-                </div>
-            </section>
+      
+      {/* Rent Hero */}
+      <section className="relative aspect-[16/6] overflow-hidden flex items-center pt-20 sm:pt-24 md:pt-28">
+          <img
+              src="https://res.cloudinary.com/kj98z6s1/image/upload/v1793208169/Lease-Hero-Image_SmartKey.avif"
+              alt="Rent Hero"
+              className="absolute inset-0 w-full h-full object-cover"
+          />
 
-      {/* Intro */}
-      <section className="px-5 pt-14 pb-10 text-center">
-        <div className="max-w-5xl mx-auto">
-          <p className="text-5xl text-[#2f79b7] mb-3 font-bold leading-tight">
+          <div className="absolute inset-0 bg-[#07172a]/75"></div>
+
+          <div className="relative z-10 w-full max-w-6xl mx-auto px-5 flex flex-col">
+              <p className="text-white/70 text-sm sm:text-base">
+                  Home / Lease Administration & Renewals
+              </p>
+
+              <h1 className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
+                  Lease Administration & Renewals
+              </h1>
+          </div>
+      </section>
+
+      {/* Lease  */}
+      <section className="bg-white px-5 py-12 sm:px-8 md:px-10 lg:px-16 lg:py-20">
+        <div className="w-full max-w-6xl mx-auto flex flex-col items-center text-center">
+          
+          <h1 className="w-full max-w-5xl text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
             Lease Administration & Renewal Services for Rental Properties in NYC
+          </h1>
+
+          <p className="w-full max-w-5xl mt-8 text-base sm:text-lg md:text-xl leading-relaxed">
+            Managing a lease for your NYC rental property goes beyond just getting it signed. It requires you to stay on top of the timelines for renewals, all tenant communications, ensuring compliance by the tenant, documentation tracking and follow-up to fit within the established timelines. You should be doing all of these things consistently to minimize the chance of delays, disputes, loss of rent, loss of rental income and tenant-related payment issues, etc. You should also set up an organizational system for these activities to help you minimize (even small) problems relating to coordination becoming bigger problems over time.
           </p>
-          <p className="text-center text-[16px] mx-auto mt-6 text-sm leading-relaxed w-auto ml-5 mr-5">
-            Managing a lease for your NYC rental property goes beyond just getting it signed. It requires you to stay on top of the timelines for renewals, all tenant communications, ensuring compliance by the tenant, documentation tracking and follow-up to fit within the established timelines. You should be doing all of these things consistently to minimize the chance of delays, disputes, loss of rent, loss of rental income and tenant-related payment issues, etc. You should also set up an organizational system for these activities to help you minimize (even small) problems relating to coordination becoming bigger problems over time.<br/><br/>
+          <p className="w-full max-w-5xl mt-8 text-base sm:text-lg md:text-xl leading-relaxed">
             Smart Key is a premier provider of organised lease administration services. NYC property owners can rely on. Property owners can rely on Smart Key for the effective management of their leasing business by using <a href="/" className="text-blue-500 hover:underline">Smart Key Property Management</a> services created for all NYC leased properties. Smart Key's software for lease administration will assist owners with the creation of a lease, coordinating renewals, tracking upcoming lease expirations, communicating with existing tenants and maintaining lease documentation with a systematic workflow to ensure compliance. The result will yield an organized, compliant, predictable method of managing your rental business with significantly less daily administrative burden on you (as the property owner).
           </p>
-          <button className="mt-7 bg-[#1f83c5] text-white text-xs md:text-sm px-7 py-3 rounded hover:bg-[#176da6] transition">
-            <a href="/contact">Request a Free Property Consultation</a>
-          </button>
+
+          <div className="mt-8 flex justify-center">
+            <a 
+            href="/contact"
+            className="inline-block bg-[#1f83c5] text-white font-semibold text-sm sm:text-base px-7 sm:px-10 py-4 rounded-3xl hover:bg-[#176da6] transition"
+            >
+              Request a Property Consultation
+            </a>
+          </div>
         </div>
       </section>
 
-      {/* What Includes */}
-      <section className="px-5 py-10">
-        <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-left mb-3.5 text-xl md:text-3xl font-bold">
-            What Lease Administration Actually Includes
-          </h2>
-          <p className=" text-left text-[16px]">Lease administration involves more than preparing agreements. A structured process helps landlords manage renewals, tenant communication, documentation and lease tracking without operational gaps or missed timelines.</p>
+      {/* Lease Actually Includes */}
+      <section className="bg-white px-5 py-10 sm:px-8 sm:py-12">
+        <div className="mx-auto w-full max-w-5xl">
+
+          {/* Section Heading */}
+          <div className="text-center">
+            <h2 className="text-xl font-bold text-[#2f4f73] sm:text-2xl md:text-3xl">
+              What Lease Administration Actually Includes
+            </h2>
+
+            <p className="mx-auto mt-3 max-w-3xl text-sm leading-6 text-gray-600 sm:text-base sm:leading-7">
+              Lease administration involves more than preparing agreements. A structured process helps landlords manage renewals, tenant communication, documentation and lease tracking without operational gaps or missed timelines.
+            </p>
+
+          </div>
+
           <div className="mt-8 space-y-4">
             {includeItems.map((card, index) => (
-              <div
-                key={index}
-                className="bg-[#dff6ff] border border-[#7ed8ff] rounded-md p-4 md:p-5 flex flex-col md:flex-row gap-4 items-start text-left"
-              >
-                <div className="w-12 h-12 rounded bg-white text-[#1f83c5] flex items-center justify-center shrink-0">
-                  {card.icon}
-                </div>
-
-                <div>
-                  <h3 className="text-base md:text-lg font-semibold">
-                    {card.title}
-                  </h3>
-                  <p className="text-sm text-gray-600 mt-1 leading-relaxed">
-                    {card.text}
-                  </p>
-                </div>
-              </div>
+                // Feature component used
+                <FeatureBlock
+                    key={index}
+                    icon={card.icon}
+                    title={card.title}
+                    text={card.text}
+                />
             ))}
           </div>
         </div>
@@ -354,34 +360,13 @@ const LeaseAdministrationPage = () => {
               />
           </div>
       </section>
-      <section>
-          <Hero 
-          title={"Own Property? We Make Managing It Effortless."}
-          buttonText="Schedule Free Consultation"
-          backgroundType="image"
-          backgroundSrc={"https://cdn.prod.website-files.com/685ee05b8ece331bff83d4b9/68dc4ab5f573a246b9215237_Footer%20main.avif"}
-          buttonLink="/contact"
-          />
-      </section>
-      {/* CTA */}
-      {/* <section className="px-5 py-14 text-center">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-xl md:text-3xl font-bold">
-            Need Help Managing Lease Renewals?
-          </h2>
-
-          <p className="max-w-4xl mx-auto mt-4 text-sm text-gray-600 leading-relaxed">
-            Smart Key Property Management provides structured lease
-            administration support for landlords who want better organization,
-            clear records, and professional tenant coordination.
-          </p>
-
-          <button className="mt-7 inline-flex items-center gap-2 bg-[#1f83c5] text-white text-xs md:text-sm px-7 py-3 rounded hover:bg-[#176da6] transition">
-            <Phone size={16} />
-            Schedule Free Consultation
-          </button>
-        </div>
-      </section> */}
+      {/* Footer CTA */}
+      <FooterCTA 
+          backgroundSrc={'https://res.cloudinary.com/kj98z6s1/image/upload/v1793208101/Footer_SamrtKey.avif'}
+          title={'Own Property? We Make Managing It Effortless.'}
+          buttonText='Schedule Free Consultation'
+          buttonLink='/contact'
+      />
     </main>
   );
 };

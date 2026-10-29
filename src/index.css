@@ -298,3 +298,31 @@ html, body {
     font-size: 16px;
   }
 }
+
+
+@keyframes marquee-forward {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-marquee-forward {
+  animation: marquee-forward 30s linear infinite;
+  will-change: transform;
+}
+
+/* Pause the scrolling track when hovering over the component */
+.scrolling-names.pause-on-hover:hover .scrolling-names-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee-forward {
+    animation: none;
+    transform: none;
+  }
+}

@@ -180,7 +180,7 @@ const HomePage = () => {
       
       {/* Footer CTA */}
       <FooterCTA 
-      backgroundSrc={'https://res.cloudinary.com/kj98z6s1/image/upload/v1793208101/Footer_SamrtKey.avif'}
+      // backgroundSrc={'https://res.cloudinary.com/kj98z6s1/image/upload/v1793208101/Footer_SamrtKey.avif'}
       title={'Own Property? We Make Managing It Effortless.'}
       buttonText='Schedule Free Consultation'
       buttonLink='/contact'

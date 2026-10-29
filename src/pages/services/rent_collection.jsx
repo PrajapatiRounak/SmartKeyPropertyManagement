@@ -9,19 +9,19 @@ import FooterCTA from "@/components/footerCTA/FooterCTA";
 const costCards = [
     {
         key: 1,
-        icon: <Home size={22} />,
+        icon: 'https://res.cloudinary.com/kj98z6s1/image/upload/v1793208193/Rent_Deal_SmartKey_result.avif',
         title: "Rent-Regulated Properties & Legal Requirements",
         text: "In NYC, rent-regulated properties require specialized handling. These properties, governed by rent control and stabilization laws, come with additional compliance requirements that landlords must meet. Smart Key Property Management ensures all rent collection processes align with local regulations, helping you avoid potential legal pitfalls.",
     },
     {
         key: 2,
-        icon: <Wrench size={22} />,
+        icon: 'https://res.cloudinary.com/kj98z6s1/image/upload/v1793208196/Rent_Money_SmartKey_result.avif',
         title: "Timely Rent Collection & Tenant Relations",
         text: ["Smart Key's rent collection services for landlords streamline the payment process, ensuring landlords receive payments on time. By prioritizing ",<a className="text-blue-500 hover:underline" href="https://www.smartkeypropertymanagement.com/services/tenant-screening-and-placement" target="_blank" rel="noreferrer">tenant communication </a>,"and consistent follow-ups, we help mitigate the risk of late payments and disruptions in cash flow. "],
     },
     {
         key: 3,
-        icon: <FileText size={22} />,
+        icon: 'https://res.cloudinary.com/kj98z6s1/image/upload/v1793208191/Rent_Lender_SmartKey_result.avif',
         title: "Stay Compliant with Landlord Legal Responsibilities",
         text: "Landlords are subject to strict rental property compliance laws. Smart Key works alongside legal professionals to keep your rent collection practices compliant with landlord legal responsibilities. Whether you're managing rent-regulated properties or market-rate properties, our comprehensive approach covers all necessary documentation and ensures timely execution.",
     },
@@ -29,17 +29,17 @@ const costCards = [
 
 const benefits = [
     {
-        icon: <img src="https://cdn.prod.website-files.com/685ee05b8ece331bff83d4b9/69c5751ebec9d2b60d3f7089_program.png"></img>,
+        icon: 'https://res.cloudinary.com/kj98z6s1/image/upload/v1793208194/Rent_House-Program_SmartKey_result.avif',
         title: "Efficient Rent Collection with Housing Programs",
         text: "At Smart Key Property Management, we understand that rent collection isn't always straightforward, especially when it involves tenants receiving assistance through housing programs. That's why we specialize in rental assistance coordination to ensure that all tenants eligible for government housing support, such as CityFHEPS/HRA and Section-8, pay on time and meet their financial obligations.",
     },
     {
-        icon: <img src="https://cdn.prod.website-files.com/685ee05b8ece331bff83d4b9/69c575270609f329458e6385_handshake.png"></img>,
+        icon: 'https://res.cloudinary.com/kj98z6s1/image/upload/v1793208192/Rent_Handshake_SmartKey_result.avif',
         title: "Partnership with Housing Programs for Timely Payments",
         text: "Our collaboration with housing programs NYC ensures smooth rent collection by streamlining the process and handling the paperwork required for rent collection housing programs. We make it easy for landlords by working directly with housing authorities to facilitate timely rent payments and avoid unnecessary delays in rent disbursement.",
     },
     {
-        icon: <img src="https://cdn.prod.website-files.com/685ee05b8ece331bff83d4b9/69c5759e26f4212d8a478096_secure-shield.png"></img>,
+        icon: 'https://res.cloudinary.com/kj98z6s1/image/upload/v1793208190/Rent_Secure-Shield_SmartKey_result.avif',
         title: "Clearing Arrears and Protecting Your Revenue",
         text: "Arrears recovery can be complicated, but with Smart Key's streamlined rent collection process, we help clear outstanding payments efficiently. Through our coordination with government-assisted programs, we protect landlords from revenue loss while adhering to regulatory standards. Our approach eliminates the risk of eviction delays, ensuring a stable cash flow and continued compliance.",
     },
@@ -128,7 +128,7 @@ const RentCollectionPage = () => {
             <section className="relative aspect-[16/6] overflow-hidden flex items-center pt-20 sm:pt-24 md:pt-28">
                 <img
                     src="https://res.cloudinary.com/kj98z6s1/image/upload/v1793208195/Rent-Hero-Image_SmartKey.avif"
-                    alt="Queens Hero"
+                    alt="Rent Hero"
                     className="absolute inset-0 w-full h-full object-cover"
                 />
 
@@ -145,18 +145,18 @@ const RentCollectionPage = () => {
                 </div>
             </section>
 
-            {/* Queens Property Management */}
+            {/* Rent Property Management */}
             <section className="bg-white px-5 py-12 sm:px-8 md:px-10 lg:px-16 lg:py-20">
-                <div className="w-full max-w-6xl mx-auto flex flex-col items-center text-center">
+                <div className="w-full max-w-9xl mx-auto flex flex-col items-center text-center">
 
-                    <h1 className="w-full max-w-5xl text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                    <h1 className="w-full max-w-7xl text-3xl sm:text-2xl md:text-3xl lg:text-5xl font-bold leading-tight">
                         Rent Collection & Arrears Recovery for Landlords in NYC and New Jersey
                     </h1>
 
-                    <p className="w-full max-w-5xl mt-8 text-base sm:text-lg md:text-xl leading-relaxed">
+                    <p className="w-full max-w-6xl mt-8 text-base sm:text-lg md:text-xl lg:text-lg leading-relaxed">
                         Rent collection is a fundamental aspect of property management that directly influences rental income and long-term business stability. In highly-regulated markets like New York City and New Jersey, managing rent payments requires much more than a basic tracking system it demands a robust, compliance-driven approach to ensure timely payments and avoid costly legal disputes.
                     </p>
-                    <p className="w-full max-w-5xl mt-8 text-base sm:text-lg md:text-xl leading-relaxed">
+                    <p className="w-full max-w-6xl mt-8 text-base sm:text-lg md:text-xl lg:text-lg leading-relaxed">
                         At <a href="/" className="text-blue-500 hover:underline">Smart Key Property Management</a>, we assist landlords in navigating the complexities of rental property compliance. With ever-evolving landlord legal responsibilities in both NYC and NJ, it's essential to have a structured system that not only tracks rent but also addresses overdue payments in a compliant and efficient manner. We work closely with legal professionals to ensure that all arrears recovery actions adhere to local regulations, are well-organized and are fully documented. This process helps minimize financial risks, maintains consistent cash flow and ensures transparency for both landlords and tenants, so everyone stays informed and aligned throughout the lease cycle.
                     </p>
 
@@ -177,11 +177,11 @@ const RentCollectionPage = () => {
                     
                     {/* Section Heading */}
                     <div className="text-center">
-                        <h2 className="text-xl font-bold text-[#2f4f73] sm:text-2xl md:text-3xl">
+                        <h2 className="text-xl font-bold text-[#2f4f73] sm:text-2xl md:text-3xl lg:text-4xl">
                             NYC Rent Collection Basics
                         </h2>
 
-                        <p className="mx-auto mt-3 max-w-3xl text-sm leading-6 text-gray-600 sm:text-base sm:leading-7">
+                        <p className="mx-auto mt-3 max-w-6xl text-sm leading-6 text-gray-600 sm:text-base sm:leading-7 lg:text-lg">
                             Managing rent collection in NYC and New Jersey is crucial for maintaining a profitable and legally compliant property portfolio.
                         </p>
                     </div>
@@ -224,35 +224,6 @@ const RentCollectionPage = () => {
                                 title={card.title}
                                 text={card.text}
                             />
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            <section className="px-5 py-10">
-                <div className="max-w-5xl mx-auto text-center">
-                    <h2 className="text-xl md:text-3xl font-bold">
-                        How Smart Key Efficiently Works with Housing Programs to Collect Rent and Clear Arrears
-                    </h2>
-                    <p>Smart Key Property Management partners with housing programs like CityFHEPS/HRA and Section-8 to streamline rent collection and clear arrears. We ensure timely payments and protect landlords from potential revenue loss.</p>
-                    <div className="flex flex-cols-1 sm:flex-cols-2 lg:flex-cols-4 gap-4 mt-8">
-                        {benefits.map((card, index) => (
-                        <div
-                            key={index}
-                            className="bg-[#dff6ff] border border-[#7ed8ff] rounded-md p-4 md:p-5 flex flex-col md:flex-row gap-4 items-start text-left"
-                        >
-                            <div className="w-12 h-12 rounded bg-white text-[#1f83c5] grid-cols-2 items-center justify-center shrink-0">
-                            {card.icon}
-                            </div>
-                            <div>
-                            <h3 className="text-base md:text-lg font-semibold">
-                                {card.title}
-                            </h3>
-                            <p className="text-sm text-gray-600 mt-1 leading-relaxed">
-                                {card.text}
-                            </p>
-                            </div>
-                        </div>
                         ))}
                     </div>
                 </div>
@@ -351,22 +322,46 @@ const RentCollectionPage = () => {
             </section>
 
             {/* Risk Management */}
-            <section className="px-5 py-12">
-                <div className="max-w-5xl mx-auto text-center">
-                    <h2 className="text-xl md:text-3xl font-bold">
+            <section className="bg-white px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
+                <div className="mx-auto w-full max-w-5xl">
+
+                    <h2 className="text-center text-2xl font-bold leading-tight text-[#416184] sm:text-3xl lg:text-4xl">
                         Risk Management for Rental Properties in NYC and New Jersey
                     </h2>
-                    <p className="max-w-4xl mx-auto mt-4 text-sm text-gray-600 leading-relaxed">
-                        Risk management is crucial for landlords to protect their rental income and prevent <a href="https://www.smartkeypropertymanagement.com/services/legal-compliances-and-risk-management">legal complications</a>. By identifying and addressing risks early, landlords can reduce financial losses and avoid costly disputes. Smart Key's structured approach to risk management ensures a proactive strategy, from early detection to efficient resolution of issues related to rent collection and arrears recovery.
+
+                    <p className="mx-auto mt-4 max-w-4xl text-sm leading-6 text-[#416184] sm:text-base sm:leading-7">
+                        Risk management is crucial for landlords to protect their rental income and prevent{" "}
+                        <a
+                            href="https://www.smartkeypropertymanagement.com/services/legal-compliances-and-risk-management"
+                            className="font-semibold hover:underline text-[#1f83c5]"
+                        >
+                            legal complications
+                        </a>
+                        . By identifying and addressing risks early, landlords can reduce financial losses and avoid costly disputes. Smart Key's structured approach to risk management ensures a proactive strategy, from early detection to efficient resolution of issues related to rent collection and arrears recovery.
                     </p>
-                    <ul>
-                        <li><strong>Legal Risk Mitigation - </strong>We help identify potential legal issues early, minimizing the risk of costly litigation and disputes.</li>
-                        <li><strong>Early Issue Detection - </strong>Our proactive approach allows us to spot and address risks before they escalate into significant problems.</li>
-                        <li><strong>Tenant Payment Risk - </strong>We monitor tenant payment behaviors to reduce the risk of late payments and non-payment.</li>
-                        <li><strong>Eviction Prevention- </strong>By identifying problematic tenants early, we help avoid evictions and the associated costs and delays.</li>
+
+                    <ul className="mt-5 space-y-3 pl-26 pr-26 text-sm leading-6 text-[#416184] sm:text-base sm:leading-7">
+                        <li>
+                            <strong>1. Legal Risk Mitigation - </strong>
+                            We help identify potential legal issues early, minimizing the risk of costly litigation and disputes.
+                        </li>
+                        <li>
+                            <strong>2. Early Issue Detection - </strong>
+                            Our proactive approach allows us to spot and address risks before they escalate into significant problems.
+                        </li>
+                        <li>
+                            <strong>3. Tenant Payment Risk - </strong>
+                            We monitor tenant payment behaviors to reduce the risk of late payments and non-payment.
+                        </li>
+                        <li>
+                            <strong>4. Eviction Prevention - </strong>
+                            By identifying problematic tenants early, we help avoid evictions and the associated costs and delays.
+                        </li>
                     </ul>
+
                 </div>
             </section>
+
 
             {/* CTA */}
             <section className="bg-white px-5 py-12 sm:px-8 md:px-10 lg:px-16 lg:py-20">

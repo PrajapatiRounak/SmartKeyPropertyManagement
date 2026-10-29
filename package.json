@@ -27,13 +27,9 @@
     "react-icons": "^5.7.0",
     "react-markdown": "^10.1.0",
     "react-router": "^7.13.1",
-<<<<<<< HEAD
-    "react-router-dom": "^7.13.1",
     "react-router-hash-link": "^2.4.3",
-=======
     "react-router-dom": "^7.18.5",
     "remark-gfm": "^4.0.1",
->>>>>>> refs/remotes/origin/main
     "shadcn": "^4.7.0",
     "tailwind-merge": "^3.6.0",
     "tailwindcss": "^4.2.1",
