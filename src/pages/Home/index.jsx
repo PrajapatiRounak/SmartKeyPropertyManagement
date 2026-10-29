@@ -170,12 +170,14 @@ const HomePage = () => {
         steps={steps}
       />
 
+      {/* FAQ */}
       <FAQ
         title="Frequently Asked Question"
         data={faqData}
         bgColor="bg-white"
         titleColor="text-[#2f4f73]"
       />
+      
       {/* Footer CTA */}
       <FooterCTA 
       backgroundSrc={'https://res.cloudinary.com/kj98z6s1/image/upload/v1793208101/Footer_SamrtKey.avif'}

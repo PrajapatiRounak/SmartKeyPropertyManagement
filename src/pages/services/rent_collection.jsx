@@ -1,22 +1,26 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Home, Wrench, FileText, ShieldCheck, DollarSign, Phone } from "lucide-react";
+import FeatureBlock from "@/components/featureBlock/FeatureBlock";
 import FAQ from "@/components/faq";
-import Hero from "@/components/hero";
+import FooterCTA from "@/components/footerCTA/FooterCTA";
 
 
 const costCards = [
     {
+        key: 1,
         icon: <Home size={22} />,
         title: "Rent-Regulated Properties & Legal Requirements",
         text: "In NYC, rent-regulated properties require specialized handling. These properties, governed by rent control and stabilization laws, come with additional compliance requirements that landlords must meet. Smart Key Property Management ensures all rent collection processes align with local regulations, helping you avoid potential legal pitfalls.",
     },
     {
+        key: 2,
         icon: <Wrench size={22} />,
         title: "Timely Rent Collection & Tenant Relations",
-        text: ["Smart Key's rent collection services for landlords streamline the payment process, ensuring landlords receive payments on time. By prioritizing ",<a href="https://www.smartkeypropertymanagement.com/services/tenant-screening-and-placement" target="_blank" rel="noreferrer">tenant communication </a>,"and consistent follow-ups, we help mitigate the risk of late payments and disruptions in cash flow. "],
+        text: ["Smart Key's rent collection services for landlords streamline the payment process, ensuring landlords receive payments on time. By prioritizing ",<a className="text-blue-500 hover:underline" href="https://www.smartkeypropertymanagement.com/services/tenant-screening-and-placement" target="_blank" rel="noreferrer">tenant communication </a>,"and consistent follow-ups, we help mitigate the risk of late payments and disruptions in cash flow. "],
     },
     {
+        key: 3,
         icon: <FileText size={22} />,
         title: "Stay Compliant with Landlord Legal Responsibilities",
         text: "Landlords are subject to strict rental property compliance laws. Smart Key works alongside legal professionals to keep your rent collection practices compliant with landlord legal responsibilities. Whether you're managing rent-regulated properties or market-rate properties, our comprehensive approach covers all necessary documentation and ensures timely execution.",
@@ -120,80 +124,111 @@ const RentCollectionPage = () => {
     return (
         <main className="bg-white text-[#17395f]">
 
-            {/* TOP HERO SECTION */}
-            <section className="relative h-[240px] md:h-[620px] overflow-hidden flex items-center">
+            {/* Rent Hero */}
+            <section className="relative aspect-[16/6] overflow-hidden flex items-center pt-20 sm:pt-24 md:pt-28">
                 <img
-                    src="https://cdn.prod.website-files.com/685ee05b8ece331bff83d4b9/6a6395ce80d2691903f841da_Smartkey%20Website%20Hero%20Images.avif"
-                    alt="Rent Collection Hero"
+                    src="https://res.cloudinary.com/kj98z6s1/image/upload/v1793208195/Rent-Hero-Image_SmartKey.avif"
+                    alt="Queens Hero"
                     className="absolute inset-0 w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-[#07172a]/75"></div>
-                <div className="relative z-10 max-w-6xl mx-auto px-5 w-full">
 
-                    <p className="text-white/70 text-xs mb-4">
-                        Home / Services / Rent Collection
+                <div className="absolute inset-0 bg-[#07172a]/75"></div>
+
+                <div className="relative z-10 w-full max-w-6xl mx-auto px-5 flex flex-col">
+                    <p className="text-white/70 text-sm sm:text-base">
+                        Home / Rent Collection
                     </p>
-                    <h1 className="text-white text-4xl md:text-6xl font-bold leading-tight">
-                        Rent Collection &
-                        <br />
-                        Arrears Recovery
+
+                    <h1 className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
+                        Rent Collection & Arrears Recovery
                     </h1>
                 </div>
             </section>
 
-            {/* Hero */}
-            <section className="px-5 pt-16 pb-10 text-center">
-                <div className="max-w-5xl mx-auto">
-                    <p className="text-xs text-[#2f79b7] font-semibold mb-3">
-                        Rent Collection & Arrears Recovery
-                    </p>
-                    <h1 className="text-5xl  font-bold leading-tight">
+            {/* Queens Property Management */}
+            <section className="bg-white px-5 py-12 sm:px-8 md:px-10 lg:px-16 lg:py-20">
+                <div className="w-full max-w-6xl mx-auto flex flex-col items-center text-center">
+
+                    <h1 className="w-full max-w-5xl text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                         Rent Collection & Arrears Recovery for Landlords in NYC and New Jersey
                     </h1>
-                    <p className="w-auto mt-[23px] ml-[20px] mr-[20px]">
+
+                    <p className="w-full max-w-5xl mt-8 text-base sm:text-lg md:text-xl leading-relaxed">
                         Rent collection is a fundamental aspect of property management that directly influences rental income and long-term business stability. In highly-regulated markets like New York City and New Jersey, managing rent payments requires much more than a basic tracking system it demands a robust, compliance-driven approach to ensure timely payments and avoid costly legal disputes.
-                    </p><br />
-                    <p className="w-auto mt-[23px] ml-[20px] mr-[20px]">
-                        At <a href="/" className="">Smart Key Property Management</a>, we assist landlords in navigating the complexities of rental property compliance. With ever-evolving landlord legal responsibilities in both NYC and NJ, it's essential to have a structured system that not only tracks rent but also addresses overdue payments in a compliant and efficient manner. We work closely with legal professionals to ensure that all arrears recovery actions adhere to local regulations, are well-organized and are fully documented. This process helps minimize financial risks, maintains consistent cash flow and ensures transparency for both landlords and tenants, so everyone stays informed and aligned throughout the lease cycle.
                     </p>
-                    <button className="mt-7 bg-[#1f83c5] text-white text-xs md:text-sm px-7 py-3 rounded hover:bg-[#176da6] transition">
-                        <a href="/contact">Request a Free Property Consultation</a>
-                    </button>
+                    <p className="w-full max-w-5xl mt-8 text-base sm:text-lg md:text-xl leading-relaxed">
+                        At <a href="/" className="text-blue-500 hover:underline">Smart Key Property Management</a>, we assist landlords in navigating the complexities of rental property compliance. With ever-evolving landlord legal responsibilities in both NYC and NJ, it's essential to have a structured system that not only tracks rent but also addresses overdue payments in a compliant and efficient manner. We work closely with legal professionals to ensure that all arrears recovery actions adhere to local regulations, are well-organized and are fully documented. This process helps minimize financial risks, maintains consistent cash flow and ensures transparency for both landlords and tenants, so everyone stays informed and aligned throughout the lease cycle.
+                    </p>
+
+                    <div className="mt-8 flex justify-center">
+                        <a
+                            href="/contact"
+                            className="inline-block bg-[#1f83c5] text-white font-semibold text-sm sm:text-base px-7 sm:px-10 py-4 rounded-3xl hover:bg-[#176da6] transition"
+                        >
+                            Request a Property Consultation
+                        </a>
+                    </div>
                 </div>
             </section>
+
             {/* Cost Section */}
-            <section className="px-5 py-10">
-                <div className="max-w-5xl mx-auto text-center">
-                    <h2 className="text-xl md:text-3xl font-bold">
-                        NYC Rent Collection Basics
-                    </h2>
-                    <p className="max-w-3xl mx-auto mt-3 text-sm text-gray-600">
-                        Managing rent collection in NYC and New Jersey is crucial for maintaining a profitable and legally compliant property portfolio.
-                    </p>
+            <section className="bg-white px-5 py-10 sm:px-8 sm:py-12">
+                <div className="mx-auto w-full max-w-5xl">
+                    
+                    {/* Section Heading */}
+                    <div className="text-center">
+                        <h2 className="text-xl font-bold text-[#2f4f73] sm:text-2xl md:text-3xl">
+                            NYC Rent Collection Basics
+                        </h2>
+
+                        <p className="mx-auto mt-3 max-w-3xl text-sm leading-6 text-gray-600 sm:text-base sm:leading-7">
+                            Managing rent collection in NYC and New Jersey is crucial for maintaining a profitable and legally compliant property portfolio.
+                        </p>
+                    </div>
+                    
                     <div className="mt-8 space-y-4">
                         {costCards.map((card, index) => (
-                            <div
-                            key={index}
-                            className="bg-[#dff6ff] border border-[#7ed8ff] rounded-md p-4 md:p-5 flex flex-col md:flex-row gap-4 items-start text-left"
-                            >
-                            <div className="w-12 h-12 rounded bg-white text-[#1f83c5] flex items-center justify-center shrink-0">
-                                {card.icon}
-                            </div>
-                                <div>
-                                    <h3 className="text-base md:text-lg font-semibold">
-                                        {card.title}
-                                    </h3>
-                                    <p className="text-sm text-gray-600 mt-1 leading-relaxed">
-                                        {card.text}
-                                    </p>
-                                </div>
-                            </div>
+                            // Feature component used
+                            <FeatureBlock
+                                key={index}
+                                icon={card.icon}
+                                title={card.title}
+                                text={card.text}
+                            />
                         ))}
                     </div>
                 </div>
             </section>
 
             {/* Benefits */}
+            <section className="bg-white px-5 py-10 sm:px-8 sm:py-12">
+                <div className="mx-auto w-full max-w-5xl">
+                    
+                    {/* Section Heading */}
+                    <div className="text-center">
+                        <h2 className="text-xl font-bold text-[#2f4f73] sm:text-2xl md:text-3xl">
+                            How Smart Key Efficiently Works with Housing Programs to Collect Rent and Clear Arrears
+                        </h2>
+
+                        <p className="mx-auto mt-3 max-w-3xl text-sm leading-6 text-gray-600 sm:text-base sm:leading-7">
+                            Smart Key Property Management partners with housing programs like CityFHEPS/HRA and Section-8 to streamline rent collection and clear arrears. We ensure timely payments and protect landlords from potential revenue loss.
+                        </p>
+                    </div>
+                    
+                    <div className="mt-8 space-y-4">
+                        {benefits.map((card, index) => (
+                            // Feature component used
+                            <FeatureBlock
+                                key={index}
+                                icon={card.icon}
+                                title={card.title}
+                                text={card.text}
+                            />
+                        ))}
+                    </div>
+                </div>
+            </section>
+
             <section className="px-5 py-10">
                 <div className="max-w-5xl mx-auto text-center">
                     <h2 className="text-xl md:text-3xl font-bold">
@@ -281,28 +316,37 @@ const RentCollectionPage = () => {
             </section>
 
             {/* Why Choose */}
-            <section className="px-5 py-10 bg-white">
-                <div className="max-w-5xl mx-auto text-center">
-                    <h2 className="text-xl md:text-3xl font-bold">
+            <section className="bg-white py-16 md:py-20 lg:py-24 px-5 sm:px-8 lg:px-10 text-center">
+                <div className="w-full max-w-6xl mx-auto flex flex-col items-center mt-6">
+
+                    <h2 className="w-full text-3xl sm:text-4xl lg:text-[42px] font-semibold leading-tight text-[#416184]">
                         Why Landlords Choose Smart Key Property Management
                     </h2>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
+                    {/* Why Choose Smart Key Cards */}
+                    <div className="w-full flex flex-wrap justify-center gap-4 mt-8">
                         {whyCards.map((item, index) => (
                             <div
                                 key={index}
-                                className="border border-[#9ddff5] bg-white shadow-sm p-5 rounded-md"
+                                className="w-full sm:w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)] border border-[#9ddff5] bg-white shadow-sm p-5 rounded-md flex items-center justify-center"
                             >
-                                <ShieldCheck className="mx-auto text-[#1f83c5]" size={26} />
-                                <h3 className="mt-4 text-sm font-semibold">{item}</h3>
+                                <h3 className="m-2 text-base font-semibold text-center">
+                                    {item}
+                                </h3>
                             </div>
                         ))}
                     </div>
-                    <div className="max-w-5xl mx-auto text-center">
-                        <button className="mt-7 bg-[#1f83c5] text-white text-xs md:text-sm px-7 py-3 rounded hover:bg-[#176da6] transition">
-                            <a href="/contact">Get Started Today</a>
-                        </button>
+
+                    {/* Call to Action */}
+                    <div className="w-full flex justify-center mt-10">
+                        <a
+                            href="/contact"
+                            className="inline-block bg-[#1f83c5] text-white font-semibold text-base px-8 sm:px-10 py-4 sm:py-5 rounded-3xl hover:bg-[#176da6] transition"
+                        >
+                            Get Started Today
+                        </a>
                     </div>
+
                 </div>
             </section>
 
@@ -325,39 +369,41 @@ const RentCollectionPage = () => {
             </section>
 
             {/* CTA */}
-            <section className="px-5 py-14 text-center">
-                <div className="max-w-5xl mx-auto">
-                    <h2 className="text-xl md:text-3xl font-bold">
+            <section className="bg-white px-5 py-12 sm:px-8 md:px-10 lg:px-16 lg:py-20">
+                <div className="w-full max-w-6xl mx-auto flex flex-col items-center text-center">
+                    
+                    <h1 className="w-full max-w-5xl text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                         Compliance Support & Professional Coordination for Landlords
-                    </h2>
-                    <p className="max-w-4xl mx-auto mt-4 text-sm text-gray-600 leading-relaxed">
+                    </h1>
+
+                    <p className="w-full max-w-5xl mt-8 text-base sm:text-lg md:text-xl leading-relaxed">
                         Smart Key provides landlords with comprehensive compliance support and professional coordination, ensuring full alignment with legal requirements and operational best practices. Our team works closely with legal professionals to tackle any compliance challenges, helping landlords navigate the complexities of rental property management without risk. From ensuring all documentation is complete and accurate to coordinating with legal experts for dispute resolution, we offer peace of mind by handling the intricate details of property management. With Smart Key, landlords can trust that their property operations will remain compliant, organized, and legally secure throughout the rental lifecycle.
                     </p>
-                    <a href="/contact">
-                        <button className="mt-7 inline-flex items-center gap-2 bg-[#1f83c5] text-white text-xs md:text-sm px-7 py-3 rounded hover:bg-[#176da6] transition">
-                            <Phone size={16} />
-                            <a href="/contact">Start Lease Process</a>
-                        </button>
-                    </a>
+
+                    <div className="mt-8 flex justify-center">
+                        <a
+                            href="/contact"
+                            className="inline-block bg-[#1f83c5] text-white font-semibold text-sm sm:text-base px-7 sm:px-10 py-4 rounded-3xl hover:bg-[#176da6] transition"
+                        >
+                            Start Lease Process
+                        </a>
+                    </div>
                 </div>
             </section>
-            <section>
-                <div>
-                    <FAQ 
-                    title="Frequently Asked Question"
-                    data={faqData}
-                    />
-                </div>
-            </section>
-            <section>
-               <Hero 
-               title={"Own Property? We Make Managing It Effortless."}
-               buttonText="Schedule Free Consultation"
-               backgroundType="image"
-               backgroundSrc={"https://cdn.prod.website-files.com/685ee05b8ece331bff83d4b9/68dc4ab5f573a246b9215237_Footer%20main.avif"}
-               buttonLink="/contact"
-               />
-            </section>
+
+            {/* FAQ */}
+            <FAQ 
+                title="Frequently Asked Question"
+                data={faqData}
+            />
+            
+            {/* Footer CTA */}
+            <FooterCTA 
+                backgroundSrc={'https://res.cloudinary.com/kj98z6s1/image/upload/v1793208101/Footer_SamrtKey.avif'}
+                title={'Own Property? We Make Managing It Effortless.'}
+                buttonText='Schedule Free Consultation'
+                buttonLink='/contact'
+            />
         </main>
     );
 };

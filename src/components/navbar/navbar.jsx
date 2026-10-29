@@ -6,7 +6,7 @@ import logo from "../../assets/logos/smartkey logo.avif";
 const aboutLinks = [
   {
     name: "Our Company",
-    path: "https://passport.appf.io/sign_in?idp_type=property&vhostless=true",
+    path: "/",
   },
   {
     name: "Our Team",

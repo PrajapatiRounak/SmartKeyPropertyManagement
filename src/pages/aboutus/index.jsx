@@ -7,55 +7,55 @@ const leaders = [
   {
     name: "KAMLESH PATEL",
     role: "Founder",
-    image: "/team/kamlesh.png",
+    image: "https://res.cloudinary.com/kj98z6s1/image/upload/v1793208154/697b7a1759e92e8dbd789a8e_Pankaj_Founder.avif",
     desc: "Founder and CEO of Smart Key Property Management, leading with a focus on efficiency, trust, and landlord-first service.",
   },
   {
     name: "RIDY",
     role: "Head Of Department",
-    image: "/team/ridy.png",
+    image: "https://res.cloudinary.com/kj98z6s1/image/upload/v1793208143/697b7a5f1328ab3b578385b9_Roy.avif",
     desc: "Head of Department managing client support, property operations, and internal coordination.",
   },
   {
     name: "LEO",
     role: "Senior Project Manager",
-    image: "/team/leo.png",
+    image: "https://res.cloudinary.com/kj98z6s1/image/upload/v1793208153/697b7a657c2fa73c6989c508_Leo.avif",
     desc: "Project Manager responsible for process planning, execution, and client service delivery.",
   },
   {
     name: "ALEX",
     role: "Operations Lead",
-    image: "/team/alex.png",
+    image: "https://res.cloudinary.com/kj98z6s1/image/upload/v1793208145/697b7a76f43280b655e442dc_Alex.avif",
     desc: "Operations Lead managing daily workflows, team coordination, and service execution.",
   },
   {
     name: "SCOTT",
     role: "Accounts Lead",
-    image: "/team/scott.png",
+    image: "https://res.cloudinary.com/kj98z6s1/image/upload/v1793208148/697b7a94295697111e492350_Scoot.avif",
     desc: "Accounts Lead handling reporting, rent tracking, reconciliation, and financial workflows.",
   },
   {
     name: "GARY K.",
     role: "Collection Lead",
-    image: "/team/gary.png",
+    image: "https://res.cloudinary.com/kj98z6s1/image/upload/v1793208141/697ce47f8fbbb11689874625_Gary_K.avif",
     desc: "Collection Lead managing tenant rent collections, reminders, and payment follow-ups.",
   },
   {
     name: "DARYL",
     role: "Legal Compliance and Risk Executive",
-    image: "/team/daryl.png",
+    image: "https://res.cloudinary.com/kj98z6s1/image/upload/v1793208148/69f0d99be442dd51f269303b_Dayrl_image.avif",
     desc: "Handles legal notices, compliance, risk management, and documentation support.",
   },
   {
     name: "DANNY",
     role: "Marketing Lead",
-    image: "/team/danny.png",
+    image: "https://res.cloudinary.com/kj98z6s1/image/upload/v1793208154/697b7a6f1056d24360fed3a7_Danny.avif",
     desc: "Marketing Lead supporting brand presence, campaigns, and property marketing.",
   },
   {
     name: "LINDA",
     role: "Sales Representative",
-    image: "/team/linda.png",
+    image: "https://res.cloudinary.com/kj98z6s1/image/upload/v1793208152/697b7a7febc4c89079513bdb_linda.avif",
     desc: "Sales Representative assisting clients with service questions, onboarding, and consultations.",
   },
 ];
@@ -89,7 +89,7 @@ const TeamSection = () => {
       </section>
 
       <section className="max-w-6xl mx-auto px-5 py-10">
-        <p className="text-sm text-gray-600 leading-relaxed max-w-5xl">
+        <p className="mt-4 text-sm leading-6 text-[#416184] sm:text-base sm:leading-7">
           Our team at Smart Key Property Management consists of seasoned experts
           with a range of specialties in lease notices, customer relations,
           administration, and property management. We are dedicated to providing
