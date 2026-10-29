@@ -1,7 +1,8 @@
 import React from "react";
 import Hero from "../../components/hero";
-import ScrollingSec from "../../components/scrollingSec/index.jsx";
 import ServiceBlock from "@/components/serviceBlock/ServiceBlock";
+import ScrollingSec from "../../components/scrollingSec/index.jsx";
+import FooterCTA from "@/components/footerCTA/FooterCTA";
 import FAQ from "../../components/faq/index.jsx";
 import { MyMap } from "@/components/ui";
 import HeroVdo from "../../../public/SmartkeyHeroVdo.mp4";
@@ -169,12 +170,18 @@ const HomePage = () => {
         steps={steps}
       />
 
-
       <FAQ
         title="Frequently Asked Question"
         data={faqData}
         bgColor="bg-white"
         titleColor="text-[#2f4f73]"
+      />
+      {/* Footer CTA */}
+      <FooterCTA 
+      backgroundSrc={'https://res.cloudinary.com/kj98z6s1/image/upload/v1793208101/Footer_SamrtKey.avif'}
+      title={'Own Property? We Make Managing It Effortless.'}
+      buttonText='Schedule Free Consultation'
+      buttonLink='/contact'
       />
     </>
   );
