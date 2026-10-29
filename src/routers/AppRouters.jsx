@@ -17,6 +17,7 @@ import PropertyComplianceSection from "../pages/services/property_compliance.jsx
 import Queens from "@/pages/locations/Queens.jsx";
 import Bronx from "@/pages/locations/Bronx.jsx";
 import Manhattan from "@/pages/locations/Manhattan.jsx";
+import BlogDetails from "@/pages/blogs/blogDetails.jsx";
 
 
 export default function AppRoutes() {
@@ -38,6 +39,7 @@ export default function AppRoutes() {
         <Route path="/pricing" element={<PricingPage />} />
         <Route path="/portfolio" element={<PortfolioPage />} />
         <Route path="/blogs" element={<BlogPage />} />
+        <Route path="/blog/:id" element={<BlogDetails />} />
         <Route path="/locations/Queens" element={<Queens />}/>
         <Route path="/locations/Bronx" element={<Bronx />}/>
         <Route path="/locations/Manhattan" element={<Manhattan />}/>
