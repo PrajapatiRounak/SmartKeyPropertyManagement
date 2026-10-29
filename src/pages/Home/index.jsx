@@ -1,6 +1,7 @@
 import React from "react";
 import Hero from "../../components/hero";
 import ScrollingSec from "../../components/scrollingSec/index.jsx";
+import ServiceBlock from "@/components/serviceBlock/ServiceBlock";
 import FAQ from "../../components/faq/index.jsx";
 import { MyMap } from "@/components/ui";
 import HeroVdo from "../../../public/SmartkeyHeroVdo.mp4";
@@ -59,6 +60,8 @@ const faqData = [
   },
 ];
 
+
+
 const HomePage = () => {
   return (
     <>
@@ -96,37 +99,51 @@ const HomePage = () => {
             </div>
         </section>
 
-      
-
+        {/* Service Block */}
         <section className="max-w-6xl mx-auto px-5 py-8 text-center">
           <h2 className="text-xl md:text-3xl font-bold">
             Complete Property Management Solutions For NYC Landlords
           </h2>
           <div className="mt-10 space-y-10">
+            {/* Services Card */}
             <ServiceBlock
-              title="Find Reliable Tenants Without Long Vacancies"
-              text="Smart Key Property Management helps landlords secure reliable tenants through structured background, credit, income and rental history screening. We reduce vacancy by leveraging NYC housing programs like CityFHEPS and managing unit approvals efficiently, with rent payments processed through DSS/HRA for added stability. Our strong network of brokers and real estate agents keeps a steady flow of prospects, so properties stay occupied and cash flow remains consistent."
-              image="https://res.cloudinary.com/kj98z6s1/image/upload/v1793208113/69ab558954d4c9c69e6c4bf2_result.avif"
+                title="Find Reliable Tenants Without Long Vacancies"
+                description="Smart Key Property Management helps landlords secure reliable tenants through structured background, credit, income and rental history screening. We reduce vacancy by leveraging NYC housing programs like CityFHEPS and managing unit approvals efficiently, with rent payments processed through DSS/HRA for added stability. Our strong network of brokers and real estate agents keeps a steady flow of prospects, so properties stay occupied and cash flow remains consistent."
+                image="https://res.cloudinary.com/kj98z6s1/image/upload/v1793208113/69ab558954d4c9c69e6c4bf2_result.avif"
+                imageAlt=""
+                buttonText="Learn More"
+                buttonLink="/services/tenant-screening-and-placement"
             />
             <ServiceBlock
-              reverse
-              title="Proactive Maintenance That Protects Property Value"
-              text="We provide property maintenance services designed to protect asset value and maintain tenant satisfaction. Our team manages the full maintenance lifecycle, including repair coordination, emergency response, vendor oversight, and documented tracking. Every service request is handled through a structured process that supports accountability, cost control, and compliance standards."
-              // image="/images/property-2.jpg"
+                reverse={true}
+                title="Proactive Maintenance That Protects Property Value"
+                description="We provide property maintenance services designed to protect asset value and maintain tenant satisfaction. Our team manages the full maintenance lifecycle, including repair coordination, emergency response, vendor oversight, and documented tracking. Every service request is handled through a structured process that supports accountability, cost control, and compliance standards."
+                image="https://res.cloudinary.com/kj98z6s1/image/upload/v1793208111/69a6026f328462fada4becb0.avif"
+                imageAlt=""
+                buttonText="Learn More"
+                buttonLink="/services/property-maintenance-and-resident-services"
             />
             <ServiceBlock
-              title="Stay Legally Protected in Rental Market"
-              text="Navigating landlord-tenant regulations in NYC requires precision and experience. We assist with lease enforcement, proper documentation, housing court coordination, and structured communication aligned with New York rental laws. Our compliance-focused approach helps property owners reduce legal exposure, avoid procedural mistakes, and maintain organized records throughout the tenancy lifecycle."
-              // image="/images/property-3.jpg"
+                title="Stay Legally Protected in Rental Market"
+                description="Navigating landlord-tenant regulations in NYC requires precision and experience. We assist with lease enforcement, proper documentation, housing court coordination, and structured communication aligned with New York rental laws. Our compliance-focused approach helps property owners reduce legal exposure, avoid procedural mistakes, and maintain organized records throughout the tenancy lifecycle."
+                image="https://res.cloudinary.com/kj98z6s1/image/upload/v1793208115/69a602bd6093c9f4ef875a2a.avif"
+                imageAlt=""
+                buttonText="Learn More"
+                buttonLink="/services/legal-compliances-and-risk-management"
             />
             <ServiceBlock
-              reverse
-              title="Reliable Rent Collection & Arrears Recovery"
-              text="Smart Key Property Management ensures timely rent collection through structured tracking systems, automated reminders and consistent follow-ups. When payments become overdue, we initiate a clear arrears recovery process that includes documented notices, payment coordination, and escalation procedures when necessary. Our transparent financial reporting keeps owners fully informed while protecting steady cash flow and reducing prolonged delinquencies."
-              image="https://cdn.prod.website-files.com/685ee05b8ece331bff83d4b9/69a60301f89490be5b43c7aa_c553504a0c70df311082df157b98da10_WhatsApp%20Image%202026-02-27%20at%203.25.06%20AM.avif"
+                reverse={true}
+                title="Reliable Rent Collection & Arrears Recovery"
+                description="Smart Key Property Management ensures timely rent collection through structured tracking systems, automated reminders and consistent follow-ups. When payments become overdue, we initiate a clear arrears recovery process that includes documented notices, payment coordination, and escalation procedures when necessary. Our transparent financial reporting keeps owners fully informed while protecting steady cash flow and reducing prolonged delinquencies."
+                image="https://res.cloudinary.com/kj98z6s1/image/upload/v1793208112/69a60301f89490be5b43c7aa.avif"
+                imageAlt=""
+                buttonText="Learn More"
+                buttonLink="/services/rent-collection-and-arrears-recovery"
             />
           </div>
         </section>
+
+        
         {/* Feature Section */}
         <section className="bg-[#e9f8fb] py-12 mt-8">
           <div className="max-w-6xl mx-auto px-5 text-center">
@@ -144,11 +161,15 @@ const HomePage = () => {
           </div>
         </section>
       </main>
+
+      {/* ScrollingSec */}
       <ScrollingSec
         title="Our Property Management Process"
         description="Our property management process follows a defined, step-by-step structure designed to protect rental income and maintain operational control. From initial property review to system setup and daily execution, each stage is documented and coordinated. This structured approach ensures consistency, accountability and long-term stability for every property we manage."
         steps={steps}
       />
+
+
       <FAQ
         title="Frequently Asked Question"
         data={faqData}
@@ -159,32 +180,7 @@ const HomePage = () => {
   );
 };
 
-const ServiceBlock = ({ title, text, image, reverse }) => {
-  return (
-    <div
-      className={`relative rounded-xl border-2 transition-transform duration-300 ease-out [transform-style:preserve-3d] hover:-translate-x-2 hover:-translate-y-2 before:absolute before:inset-0 before:rounded-xl before:[transform:translate3d(8px,8px,-1px)]
-        grid grid-cols-1 md:grid-cols-2 gap-6 items-center bg-[#e9f8fb] rounded-xl overflow-hidden ${
-        reverse ? "md:[&>*:first-child]:order-2" : ""
-      }`}
-    >
-      <div className="p-6 md:p-10 text-left">
-        <h3 className="text-lg md:text-2xl font-bold mb-3">{title}</h3>
-        <p className="text-sm md:text-base text-gray-600 leading-relaxed">
-          {text}
-        </p>
-        <button className="mt-5 text-sm font-semibold text-[#0f2742] underline ">
-          Learn More
-        </button>
-      </div>
 
-      <img
-        src={image}
-        alt={title}
-        className="w-full h-[230px] md:h-[300px] object-cover"
-      />
-    </div>
-  );
-};
 
 const Feature = ({ title , discription }) => {
   return (
