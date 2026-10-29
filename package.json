@@ -12,8 +12,10 @@
   "dependencies": {
     "@fontsource-variable/geist": "^5.2.9",
     "@tailwindcss/vite": "^4.2.1",
+    "axios": "^1.21.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "dompurify": "^3.4.17",
     "framer-motion": "^12.39.0",
     "gsap": "^3.15.0",
     "lucide-react": "^0.575.0",
@@ -23,9 +25,15 @@
     "react-dom": "^19.2.0",
     "react-google-reviews": "^1.9.0",
     "react-icons": "^5.7.0",
+    "react-markdown": "^10.1.0",
     "react-router": "^7.13.1",
+<<<<<<< HEAD
     "react-router-dom": "^7.13.1",
     "react-router-hash-link": "^2.4.3",
+=======
+    "react-router-dom": "^7.18.5",
+    "remark-gfm": "^4.0.1",
+>>>>>>> refs/remotes/origin/main
     "shadcn": "^4.7.0",
     "tailwind-merge": "^3.6.0",
     "tailwindcss": "^4.2.1",
