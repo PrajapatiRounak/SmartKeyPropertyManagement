@@ -1,35 +1,35 @@
 import React from 'react';
-import TextLoop from '@/components/Loop/TextLoop';
 import { Link } from 'react-router';
 import FAQ from '@/components/faq';
 import FooterCTA from '@/components/footerCTA/FooterCTA';
+import ScrollingNames from '@/components/scrollingName/ScrollingName';
 
 function Manhattan() {
 
   const names = [
-        { "name": "Astoria" },
-        { "name": "Long Island City" },
-        { "name": "Sunnyside" },
-        { "name": "Woodside" },
-        { "name": "Jackson Heights" },
-        { "name": "Elmhurst" },
-        { "name": "Flushing" },
-        { "name": "Forest Hills" },
-        { "name": "Rego Park" },
-        { "name": "Jamaica" },
-        { "name": "Kew Gardens" },
-        { "name": "Ridgewood" },
-        { "name": "Bayside" },
-        { "name": "Fresh Meadows" },
-        { "name": "Astoria" },
-        { "name": "Sunnyside" },
-        { "name": "Woodside" },
-        { "name": "Elmhurst" },
-        { "name": "Flushing" },
-        { "name": "Jamaica" },
-        { "name": "Forest Hills" },
-        { "name": "Bayside" }
-        ]
+  "Astoria",
+  "Long Island City",
+  "Sunnyside",
+  "Woodside",
+  "Jackson Heights",
+  "Elmhurst",
+  "Flushing",
+  "Forest Hills",
+  "Rego Park",
+  "Jamaica",
+  "Kew Gardens",
+  "Ridgewood",
+  "Bayside",
+  "Fresh Meadows",
+  "Astoria",
+  "Sunnyside",
+  "Woodside",
+  "Elmhurst",
+  "Flushing",
+  "Jamaica",
+  "Forest Hills",
+  "Bayside",
+];
          
      const services = [
         {
@@ -190,20 +190,15 @@ function Manhattan() {
                   Neighborhoods We Serve Across Manhattan
               </h3>
 
-              <TextLoop
-                  text={names.map((item) => item.name).join("  •  ")}
-                  shape="line"
-                  speed={50}
-                  direction="forward"
-                  fontSize={18}
-                  fontWeight={400}
-                  letterSpacing={0.5}
-                  uppercase={false}
-                  ribbon={false}
-                  edgeFade={0}
-                  pauseOnHover={false}
-                  color="#202b40"
-              />
+           <ScrollingNames
+            names={names}
+            fontSize="text-xl"
+            fontWeight="font-semibold"
+            gap="gap-16"
+            duration={40}
+            pauseOnHover={true}
+          />
+            
           </div>
       </section>
 

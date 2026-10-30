@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
 const FooterCTA = ({
-    backgroundSrc,
+    backgroundSrc = 'https://res.cloudinary.com/kj98z6s1/image/upload/v1793208101/Footer_SamrtKey.avif',
     title,
     buttonText = "Learn More",
     buttonLink = "#",

@@ -121,7 +121,7 @@ const Navbar = () => {
                   <Link
                     key={index}
                     to={item.path}
-                    className="text-lg font-medium leading-relaxed text-[#17263d] transition hover:text-[#12a8ff]"
+                    className="text-[16px] font-[500] leading-relaxed text-[#17263d] transition hover:text-[#12a8ff]"
                   >
                     {item.name}
                   </Link>
@@ -151,7 +151,7 @@ const Navbar = () => {
                   <Link
                     key={index}
                     to={item.path}
-                    className="text-lg font-medium leading-relaxed text-[#17263d] transition hover:text-[#12a8ff]"
+                    className="text-[16px] font-[500] leading-relaxed text-[#17263d] transition hover:text-[#12a8ff]"
                   >
                     {item.name}
                   </Link>
@@ -184,7 +184,7 @@ const Navbar = () => {
           <li className="group relative">
             <button
               type="button"
-              className="flex cursor-pointer items-center gap-1 font-medium transition group-hover:text-[#12a8ff]"
+              className="flex cursor-pointer items-center gap-1 text-[16px] font-[500] transition group-hover:text-[#12a8ff]"
             >
               AppFolio
               <ChevronDown
@@ -201,7 +201,7 @@ const Navbar = () => {
                   <Link
                     key={index}
                     to={item.path}
-                    className="text-lg font-medium leading-relaxed text-[#17263d] transition hover:text-[#12a8ff]"
+                    className=" text-[16px] font-[500] leading-relaxed text-[#17263d] transition hover:text-[#12a8ff]"
                   >
                     {item.name}
                   </Link>
@@ -241,7 +241,7 @@ const Navbar = () => {
                   <Link
                     key={index}
                     to={item.path}
-                    className="text-lg font-medium leading-relaxed text-[#17263d] transition hover:text-[#12a8ff]"
+                    className=" text-[16px] font-[500] leading-relaxed text-[#17263d] transition hover:text-[#12a8ff]"
                   >
                     {item.name}
                   </Link>
@@ -393,7 +393,7 @@ const Navbar = () => {
               <Link
                 key={index}
                 to={item.path}
-                className="block text-sm"
+                className="block text-[16px] font-[500]"
                 onClick={() => setIsOpen(false)}
               >
                 {item.name}

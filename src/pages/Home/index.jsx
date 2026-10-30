@@ -6,6 +6,8 @@ import FooterCTA from "@/components/footerCTA/FooterCTA";
 import FAQ from "../../components/faq/index.jsx";
 import { MyMap } from "@/components/ui";
 import HeroVdo from "../../../public/SmartkeyHeroVdo.mp4";
+import GoogleReviewsCarousel from "@/components/reviews/GoogleReviewsCarousel";
+import SocialMediaGallery from "@/components/socialMedia/SocialMediaGallery";
 
 const steps = [
   {
@@ -61,6 +63,32 @@ const faqData = [
   },
 ];
 
+const socialMediaPosts = [
+  {
+    id: 1,
+    image: "/images/social/post-1.jpg",
+    link: "https://www.instagram.com/your-company/",
+    alt: "Company social media post",
+  },
+  {
+    id: 2,
+    image: "/images/social/post-2.jpg",
+    link: "https://www.instagram.com/your-company/",
+    alt: "Company social media post",
+  },
+  {
+    id: 3,
+    image: "/images/social/post-3.jpg",
+    link: "https://www.linkedin.com/company/your-company/",
+    alt: "Company LinkedIn post",
+  },
+  {
+    id: 4,
+    image: "/images/social/post-4.jpg",
+    link: "https://www.facebook.com/your-company/",
+    alt: "Company Facebook post",
+  },
+];
 
 
 const HomePage = () => {
@@ -170,6 +198,16 @@ const HomePage = () => {
         steps={steps}
       />
 
+      <GoogleReviewsCarousel 
+      
+      />
+
+      <SocialMediaGallery 
+        title="See what all the talk is about!"
+        subtitle="Transformative client experience from all around the globe"
+        cards={socialMediaPosts}
+      />
+
       {/* FAQ */}
       <FAQ
         title="Frequently Asked Question"
@@ -180,7 +218,7 @@ const HomePage = () => {
       
       {/* Footer CTA */}
       <FooterCTA 
-      backgroundSrc={'https://res.cloudinary.com/kj98z6s1/image/upload/v1793208101/Footer_SamrtKey.avif'}
+      // backgroundSrc={'https://res.cloudinary.com/kj98z6s1/image/upload/v1793208101/Footer_SamrtKey.avif'}
       title={'Own Property? We Make Managing It Effortless.'}
       buttonText='Schedule Free Consultation'
       buttonLink='/contact'

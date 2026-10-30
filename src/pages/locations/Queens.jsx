@@ -1,38 +1,36 @@
 import React from 'react';
-import TextLoop from '@/components/Loop/TextLoop';
 import { Link } from 'react-router';
 import FooterCTA from '@/components/footerCTA/FooterCTA';
 import FAQ from '@/components/faq';
-import Hero from '@/components/hero';
-import { ArrowRight } from 'lucide-react';
+import ScrollingNames from '@/components/scrollingName/ScrollingName';
 
 
 function Queens() {
 
     const names = [
-        { "name": "Astoria" },
-        { "name": "Long Island City" },
-        { "name": "Sunnyside" },
-        { "name": "Woodside" },
-        { "name": "Jackson Heights" },
-        { "name": "Elmhurst" },
-        { "name": "Flushing" },
-        { "name": "Forest Hills" },
-        { "name": "Rego Park" },
-        { "name": "Jamaica" },
-        { "name": "Kew Gardens" },
-        { "name": "Ridgewood" },
-        { "name": "Bayside" },
-        { "name": "Fresh Meadows" },
-        { "name": "Astoria" },
-        { "name": "Sunnyside" },
-        { "name": "Woodside" },
-        { "name": "Elmhurst" },
-        { "name": "Flushing" },
-        { "name": "Jamaica" },
-        { "name": "Forest Hills" },
-        { "name": "Bayside" }
-        ]
+  "Astoria",
+  "Long Island City",
+  "Sunnyside",
+  "Woodside",
+  "Jackson Heights",
+  "Elmhurst",
+  "Flushing",
+  "Forest Hills",
+  "Rego Park",
+  "Jamaica",
+  "Kew Gardens",
+  "Ridgewood",
+  "Bayside",
+  "Fresh Meadows",
+  "Astoria",
+  "Sunnyside",
+  "Woodside",
+  "Elmhurst",
+  "Flushing",
+  "Jamaica",
+  "Forest Hills",
+  "Bayside",
+];
          
     const services = [
         {
@@ -205,20 +203,14 @@ function Queens() {
                     Neighborhoods We Serve Across Queens
                 </h3>
 
-                <TextLoop
-                    text={names.map((item) => item.name).join("  •  ")}
-                    shape="line"
-                    speed={50}
-                    direction="forward"
-                    fontSize={18}
-                    fontWeight={400}
-                    letterSpacing={0.5}
-                    uppercase={false}
-                    ribbon={false}
-                    edgeFade={0}
-                    pauseOnHover={false}
-                    color="#202b40"
-                />
+               <ScrollingNames
+            names={names}
+            fontSize="text-xl"
+            fontWeight="font-semibold"
+            gap="gap-16"
+            duration={40}
+            pauseOnHover={true}
+          />
             </div>
         </section>
 
@@ -279,66 +271,78 @@ function Queens() {
             </div>
         </section>
 
-        {/* Another Info Card */}
-        <section className="bg-white py-12 md:py-20">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+       
+{/* Another Info Card */}
+<section className="bg-white py-12 md:py-20">
+  <div className="mx-auto max-w-[1550px] px-4 sm:px-6 lg:px-5">
 
-                {/* Main Card Background Container */}
-                <div className="bg-[#f8fafc] p-6 md:p-10 rounded-[28px] border border-[#e7edf3] shadow-[0_12px_40px_rgba(23,57,95,0.08)]">
+    {/* Main Card */}
+    <div className="grid grid-cols-1 items-stretch gap-8 overflow-hidden rounded-[28px] border border-[#e7edf3] bg-[#f8fafc]  shadow-[0_12px_40px_rgba(23,57,95,0.08)] md:p-8 lg:grid-cols-[1.15fr_1.1fr_140px] lg:gap-6 lg:p-">
 
-                    <div className="flex flex-col lg:flex-row items-center gap-8">
+      {/* Left: Content */}
+      <div className="flex flex-col justify-center py-4 lg:py-8 lg:pl-1">
+        <p className="mb-5 text-xs font-bold uppercase tracking-widest text-[#416184]">
+          ● Property Management Success
+        </p>
 
-                        {/* Image */}
-                        <div className="w-full lg:w-1/2 overflow-hidden rounded-[24px]">
-                            <img
-                                src="https://cdn.prod.website-files.com/685ee05b8ece331bff83d4b9/6ac7a8c8072fd293dce0abe3_Section%204.avif"
-                                srcSet="https://cdn.prod.website-files.com/685ee05b8ece331bff83d4b9/6ac7a8c8072fd293dce0abe3_Section%204-p-500.avif 500w, https://cdn.prod.website-files.com/685ee05b8ece331bff83d4b9/6ac7a8c8072fd293dce0abe3_Section%204-p-800.avif 800w, https://cdn.prod.website-files.com/685ee05b8ece331bff83d4b9/6ac7a8c8072fd293dce0abe3_Section%204.avif 863w"
-                                alt="Property management house in Queens"
-                                loading="lazy"
-                                className="w-full aspect-[4/3] object-cover"
-                            />
-                        </div>
+        <h2 className="text-2xl font-bold leading-tight text-[#416184] sm:text-3xl xl:text-4xl">
+          From Open Violations to Zero: A Real Example of Proactive Property Management
+        </h2>
 
-                        {/* Content */}
-                        <div className="w-full lg:w-1/2 text-left flex flex-col justify-center">
-                            <h2 className="text-2xl sm:text-3xl font-semibold leading-tight text-[#416184]">
-                                From Open Violations to Zero: A Real Example of Proactive Property Management
-                            </h2>
+        <p className="mt-5 text-sm leading-6 text-[#416184] sm:text-base sm:leading-7">
+          Property compliance requires more than identifying issues—it requires
+          consistent attention, coordination, and follow-through. At 120-28 218th
+          St, Jamaica, NY 11411, Smart Key stepped in to create a more organized
+          process for tracking violations, coordinating repairs and improving
+          overall property oversight.
+        </p>
 
-                            <p className="mt-4 text-sm sm:text-base leading-relaxed text-[#416184]">
-                                Property compliance requires more than identifying issues—it requires consistent attention, coordination, and follow-through. At 120-28 218th St, Jamaica, NY 11411, Smart Key stepped in to create a more organized process for tracking violations, coordinating repairs and improving overall property oversight.
-                            </p>
+        <p className="mt-3 text-sm leading-6 text-[#416184] sm:text-base sm:leading-7">
+          By maintaining regular monitoring, coordinating the necessary work,
+          and following up on outstanding items, Smart Key helped bring the
+          property's open compliance issues down to zero.
+        </p>
 
-                            <p className="mt-3 text-sm sm:text-base leading-relaxed text-[#416184]">
-                                By maintaining regular monitoring, coordinating the necessary work, and following up on outstanding items, Smart Key helped bring the property's open compliance issues down to zero.
-                            </p>
-                        </div>
+        <a
+          href="/services/legal-compliances-and-risk-management"
+          className="mt-6 inline-flex w-fit items-center gap-2 font-bold text-[#416184] underline underline-offset-4 transition hover:text-[#1f83c5]"
+        >
+          LEARN MORE <span aria-hidden="true">↗</span>
+        </a>
+      </div>
 
-                    </div>
+      {/* Center: Image */}
+      <div className="relative min-h-[280px] overflow-hidden rounded-xl ">
+        <img
+          src="https://cdn.prod.website-files.com/685ee05b8ece331bff83d4b9/6ac7a8c8072fd293dce0abe3_Section%204.avif"
+          alt="Property management house in Queens"
+          loading="lazy"
+          className="absolute inset-0 h-full  object-cover"
+        />
+      </div>
 
-                    {/* Statistics */}
-                    <div className="mt-10 pt-8 border-t border-[#dfe7ee]">
-                        <div className="flex flex-col divide-y divide-[#dfe7ee] md:flex-row md:divide-y-0 md:divide-x md:divide-[#dfe7ee]">
-                            {numbers.map((item) => (
-                                <div
-                                    key={item.title}
-                                    className="flex flex-col items-center py-4 text-center first:pt-0 last:pb-0 md:flex-1 md:py-2 md:px-4"
-                                >
-                                    <span className="text-lg sm:text-xl font-bold text-[#59249a] transition-colors duration-200">
-                                        {item.title}
-                                    </span>
+      {/* Right: Statistics */}
+      <div className="flex flex-col justify-center divide-y divide-[#dfe7ee] " >
+        {numbers.map((item) => (
+          <div
+            key={item.title}
+            className="py-5 first:pt-0 last:pb-0 lg:py-7"
+          >
+            <span className="block font-bold leading-none text-[#416184] sm:text-lg lg:text-2xl ">
+              {item.title}
+            </span>
 
-                                    <p className="text-xs uppercase tracking-wider font-semibold text-[#718ba8]">
-                                        {item.description}
-                                    </p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
+            <p className="mt-3 leading-5 text-[#718ba8] font-bold ">
+              {item.description}
+            </p>
+          </div>
+        ))}
+      </div>
 
-                </div>
-            </div>
-        </section>
+    </div>
+  </div>
+</section>
+
 
         {/* Another Card */}
         <section className="bg-white py-12 px-4 sm:px-6 lg:px-8">
