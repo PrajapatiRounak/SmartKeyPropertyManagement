@@ -1,9 +1,83 @@
-import React from "react";
-import { Send, User, Phone, MessageSquare } from "lucide-react";
-import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
+import React, { useState } from "react";
+import { Send, User, Phone, Mail, MessageSquare, Loader2, CheckCircle2, AlertCircle } from "lucide-react";
+
+const CONTACT_API = import.meta.env.VITE_CONTACT_API_URL || "/api/send-email";
 
 const ContactPage = () => {
-  
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const [submitting, setSubmitting] = useState(false);
+  const [status, setStatus] = useState({ type: "", message: "" });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus({ type: "", message: "" });
+
+    if (!formData.name.trim() || (!formData.phone.trim() && !formData.email.trim())) {
+      setStatus({
+        type: "error",
+        message: "Please enter your name and either a phone number or email address.",
+      });
+      return;
+    }
+
+    try {
+      setSubmitting(true);
+
+      const response = await fetch(CONTACT_API, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          phone: formData.phone.trim(),
+          message: formData.message.trim(),
+          type: "contact",
+        }),
+      });
+
+      const data = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        throw new Error(data.error || "Unable to send your message. Please try again.");
+      }
+
+      setStatus({
+        type: "success",
+        message: data.message || "Thank you! Your message has been sent successfully.",
+      });
+
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
+    } catch (error) {
+      setStatus({
+        type: "error",
+        message: error.message || "Failed to send message. Please try again later.",
+      });
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
   return (
     <main className="bg-white">
       <section className="relative h-[280px] md:h-[360px] flex items-end overflow-hidden">
@@ -37,15 +111,39 @@ const ContactPage = () => {
             </p>
           </div>
 
-          <form className="bg-white rounded-3xl shadow-2xl shadow-gray-200/80 border border-gray-100 p-6 md:p-8 space-y-5">
+          <form
+            onSubmit={handleSubmit}
+            className="bg-white rounded-3xl shadow-2xl shadow-gray-200/80 border border-gray-100 p-6 md:p-8 space-y-5"
+          >
+            {status.message && (
+              <div
+                className={`p-4 rounded-2xl flex items-start gap-3 text-sm ${
+                  status.type === "success"
+                    ? "bg-emerald-50 text-emerald-800 border border-emerald-200"
+                    : "bg-red-50 text-red-800 border border-red-200"
+                }`}
+              >
+                {status.type === "success" ? (
+                  <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                ) : (
+                  <AlertCircle className="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
+                )}
+                <span>{status.message}</span>
+              </div>
+            )}
+
             <div>
               <label className="block text-sm font-medium text-[#1d2d44] mb-2">
-                Full Name
+                Full Name <span className="text-red-500">*</span>
               </label>
               <div className="relative">
                 <User className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                 <input
                   type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
                   placeholder="Enter your full name"
                   className="w-full rounded-full border border-gray-200 bg-gray-50 py-3.5 pl-11 pr-4 text-sm outline-none focus:border-[#1d2d44] focus:bg-white transition"
                 />
@@ -54,12 +152,32 @@ const ContactPage = () => {
 
             <div>
               <label className="block text-sm font-medium text-[#1d2d44] mb-2">
-                Number
+                Email Address
+              </label>
+              <div className="relative">
+                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="Enter your email address"
+                  className="w-full rounded-full border border-gray-200 bg-gray-50 py-3.5 pl-11 pr-4 text-sm outline-none focus:border-[#1d2d44] focus:bg-white transition"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-[#1d2d44] mb-2">
+                Phone Number
               </label>
               <div className="relative">
                 <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                 <input
                   type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
                   placeholder="Enter your phone number"
                   className="w-full rounded-full border border-gray-200 bg-gray-50 py-3.5 pl-11 pr-4 text-sm outline-none focus:border-[#1d2d44] focus:bg-white transition"
                 />
@@ -73,7 +191,10 @@ const ContactPage = () => {
               <div className="relative">
                 <MessageSquare className="absolute left-4 top-4 w-4 h-4 text-gray-400" />
                 <textarea
+                  name="message"
                   rows="5"
+                  value={formData.message}
+                  onChange={handleChange}
                   placeholder="Write your message here..."
                   className="w-full rounded-2xl border border-gray-200 bg-gray-50 py-3.5 pl-11 pr-4 text-sm outline-none resize-none focus:border-[#1d2d44] focus:bg-white transition"
                 ></textarea>
@@ -82,10 +203,20 @@ const ContactPage = () => {
 
             <button
               type="submit"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#1d2d44] text-white px-7 py-3.5 rounded-full text-sm font-semibold hover:bg-[#2f4f73] transition"
+              disabled={submitting}
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#1d2d44] text-white px-7 py-3.5 rounded-full text-sm font-semibold hover:bg-[#2f4f73] transition disabled:opacity-60 cursor-pointer disabled:cursor-not-allowed"
             >
-              Send Message
-              <Send className="w-4 h-4" />
+              {submitting ? (
+                <>
+                  Sending...
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                </>
+              ) : (
+                <>
+                  Send Message
+                  <Send className="w-4 h-4" />
+                </>
+              )}
             </button>
           </form>
         </div>
