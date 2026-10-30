@@ -27,16 +27,16 @@ const Footer = () => {
 
             {/* Social Links */}
             <div className="flex items-center gap-3 mt-6">
-              <a href="#" aria-label="Instagram" className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-[#162238] transition-all duration-300">
+              <a href="https://www.instagram.com/smartkey_property_management" aria-label="Instagram" className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-[#162238] transition-all duration-300">
                 <Instagram size={16} />
               </a>
-              <a href="#" aria-label="Facebook" className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-[#162238] transition-all duration-300">
+              <a href="https://facebook.com/profile.php?id=61587468783938" aria-label="Facebook" className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-[#162238] transition-all duration-300">
                 <Facebook size={16} />
               </a>
-              <a href="#" aria-label="X" className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-[#162238] transition-all duration-300">
+              <a href="https://x.com/SmartkeyPM" aria-label="X" className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-[#162238] transition-all duration-300">
                 <span className="text-sm font-semibold">𝕏</span>
               </a>
-              <a href="#" aria-label="LinkedIn" className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-[#162238] transition-all duration-300">
+              <a href="https://www.linkedin.com/company/smartkey-property-management" aria-label="LinkedIn" className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-[#162238] transition-all duration-300">
                 <Linkedin size={16} />
               </a>
             </div>
@@ -50,9 +50,9 @@ const Footer = () => {
               {[
                 ["Home", "/"],
                 ["Pricing", "/pricing"],
-                ["Contact Us", "/contact"],
-                ["Legal & Policies", "/legal"],
-                ["Blogs", "/blog"],
+                ["Contact Us", "/contact-us"],
+                ["Legal & Policies", "/privacy-policy"],
+                ["Blogs", "/blogs"],
               ].map(([label, path]) => (
                 <Link
                   key={label}
@@ -113,7 +113,7 @@ const Footer = () => {
           </div>
 
           <Link
-            to="/contact"
+            to="/contact-us"
             className="inline-flex items-center justify-center gap-3 w-fit bg-white text-[#162238] text-[13px] font-bold px-7 py-3.5 rounded-full hover:bg-[#dff6ff] hover:-translate-y-1 transition-all duration-300"
           >
             Get in Touch <span className="text-lg">→</span>
@@ -135,7 +135,7 @@ const Footer = () => {
         {/* Privacy Policy */}
         <div className="text-center pb-6">
           <Link
-            to="/legal"
+            to="/privacy-policy"
             className="text-[11px] text-[#a9bdd2] hover:text-white transition-colors"
           >
             Privacy Policy

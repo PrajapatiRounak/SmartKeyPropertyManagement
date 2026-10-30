@@ -8,6 +8,38 @@ import { MyMap } from "@/components/ui";
 import GoogleReviews from "@/components/reviews/GoogleReviews";
 import SocialMediaGallery from "@/components/socialMedia/SocialMediaGallery";
 
+const Feature = ({ cardBgColor, icon, title , discription }) => {
+  return (
+    <div className={`flex flex-col items-center gap-3.5 p-6 rounded-xl shadow-sm relative border-2 transition-transform duration-300 ease-out [transform-style:preserve-3d] hover:-translate-x-2 hover:-translate-y-2 before:absolute before:inset-0 before:rounded-xl before:[transform:translate3d(8px,8px,-1px)] ${cardBgColor ? 'bg-[#dbf5fc]' : 'bg-[#fffff]'}`}>
+
+      {/* Icon or Image */}
+      <div className="flex h-23 w-23 shrink-0 items-center justify-center overflow-hidden rounded-lg text-[#1f83c5]">
+          {typeof icon === "string" ? (
+              <img
+                  src={icon}
+                  alt=""
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+              />
+          ) : (
+              icon
+          )}
+      </div>
+
+      <div className="w-full min-w-0">
+        
+        <h3 className="break-words text-base font-bold text-[#2f4f73] sm:text-lg md:text-xl lg:text-2xl">
+          {title}
+        </h3>
+        
+        <p className="mx-auto mt-3 max-w-3xl text-sm leading-6 text-gray-600 sm:text-base sm:leading-7">
+        {discription}
+        </p>
+      </div>
+    </div>
+  );
+};
+
 const steps = [
   {
     no: "01",
@@ -179,12 +211,41 @@ const HomePage = () => {
                Why NYC Landlords Trust Smart Key Property Management
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-9">
-              <Feature title="AppFolio-Powered" discription="Operates through AppFolio, providing real-time tracking for maintenance, rent collection, documentation and clear communication between owners and tenants." />
-              <Feature title="24/7 Tenant & Owner Support" discription="Our round-the-clock support ensures urgent issues are resolved quickly, protecting rental income and preventing small problems from escalating." />
-              <Feature title="Fast, Cost-Controlled Maintenance" discription="Our trusted vendor network delivers prompt repairs, helping control expenses while maintaining property condition and tenant satisfaction." />
-              <Feature title="NYC Compliance Expertise (DOB & HPD)" discription="We handle DOB and HPD compliance requirements, inspections and violations to keep NYC rental properties legally protected." />
-              <Feature title="Strategic Vacancy & Housing Partnerships" discription="We reduce vacancy through structured tenant placement, including housing voucher coordination and compliance management across New York City." />
-              <Feature title="Reliable Rent Tracking & Collection" discription="We monitor rent status, communicate with tenants and maintain accurate records to support smooth monthly collections." />
+              
+              <Feature 
+              cardBgColor = {true}
+              icon = 'https://res.cloudinary.com/kj98z6s1/image/upload/v1793208110/Home-page_Tracking_SmartKey_result.avif'
+              title="AppFolio-Powered" 
+              discription="Operates through AppFolio, providing real-time tracking for maintenance, rent collection, documentation and clear communication between owners and tenants." />
+              
+              <Feature 
+              cardBgColor = {false}
+              icon = 'https://res.cloudinary.com/kj98z6s1/image/upload/v1793208109/Home-page_Support_SmartKey_result.avif'
+              title="24/7 Tenant & Owner Support" 
+              discription="Our round-the-clock support ensures urgent issues are resolved quickly, protecting rental income and preventing small problems from escalating." />
+              
+              <Feature 
+              cardBgColor = {true}
+              icon = 'https://res.cloudinary.com/kj98z6s1/image/upload/v1793208114/Home-page_Tools_SmartKey_result.avif'
+              title="Fast, Cost-Controlled Maintenance" 
+              discription="Our trusted vendor network delivers prompt repairs, helping control expenses while maintaining property condition and tenant satisfaction." />
+
+              <Feature 
+              cardBgColor = {false}
+              icon = 'https://res.cloudinary.com/kj98z6s1/image/upload/v1793208115/Home-page_Vendor_SmartKey_result.avif'
+              title="NYC Compliance Expertise (DOB & HPD)" 
+              discription="We handle DOB and HPD compliance requirements, inspections and violations to keep NYC rental properties legally protected." />
+              <Feature 
+              cardBgColor = {true}
+              icon = 'https://res.cloudinary.com/kj98z6s1/image/upload/v1793208109/Home-page_Acquisition_SmartKey_result.avif'
+              title="Strategic Vacancy & Housing Partnerships" 
+              discription="We reduce vacancy through structured tenant placement, including housing voucher coordination and compliance management across New York City." />
+
+              <Feature 
+              cardBgColor = {false}
+              icon = 'https://res.cloudinary.com/kj98z6s1/image/upload/v1793208109/Home-page_Certification_SmartKey_result.avif'
+              title="Reliable Rent Tracking & Collection" 
+              discription="We monitor rent status, communicate with tenants and maintain accurate records to support smooth monthly collections." />
             </div>
           </div>
         </section>
@@ -223,22 +284,6 @@ const HomePage = () => {
       buttonLink='/contact-us'
       />
     </>
-  );
-};
-
-
-
-const Feature = ({ title , discription }) => {
-  return (
-    <div className="bg-white p-6 rounded-xl shadow-sm relative border-2 transition-transform duration-300 ease-out [transform-style:preserve-3d] hover:-translate-x-2 hover:-translate-y-2 before:absolute before:inset-0 before:rounded-xl before:[transform:translate3d(8px,8px,-1px)]">
-      <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-[#0f2742] text-white flex items-center justify-center">
-        ✓
-      </div>
-      <h3 className="font-bold text-base">{title}</h3>
-      <p className="text-sm text-gray-600 mt-2">
-       {discription}
-      </p>
-    </div>
   );
 };
 
