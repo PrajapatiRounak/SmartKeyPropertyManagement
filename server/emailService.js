@@ -3,7 +3,6 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-<<<<<<< HEAD
 // eslint-disable-next-line no-undef
 const resendApiKey = process.env.RESEND_API_KEY ;
 const resend = new Resend(resendApiKey);
@@ -12,13 +11,6 @@ const resend = new Resend(resendApiKey);
 const fromEmail = process.env.RESEND_FROM_EMAIL ;
 // eslint-disable-next-line no-undef
 const toEmail = process.env.RESEND_TO_EMAIL ;
-=======
-const resendApiKey = process.env.RESEND_API_KEY || "re_NjuYP6JQ_35t4aDV8BPpDihMyJzDAbN5t";
-const resend = new Resend(resendApiKey);
-
-const fromEmail = process.env.RESEND_FROM_EMAIL || "SmartKey <onboarding@resend.dev>";
-const toEmail = process.env.RESEND_TO_EMAIL || "theotask@gmail.com";
->>>>>>> 9043e25 (Pricing & contact page fixing (theo))
 
 export async function sendNotificationEmail(data) {
   const { name, email, phone, message, plan, services, type } = data;
