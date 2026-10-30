@@ -3,7 +3,9 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router";
 
-const API_URL = "http://localhost:3000";
+const API_URL = (
+  import.meta.env.VITE_API_URL 
+).replace(/\/+$/, "");
 const CARDS_PER_PAGE = 6;
 
 const BlogPage = () => {
