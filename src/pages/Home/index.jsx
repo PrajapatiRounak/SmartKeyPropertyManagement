@@ -6,6 +6,8 @@ import FooterCTA from "@/components/footerCTA/FooterCTA";
 import FAQ from "../../components/faq/index.jsx";
 import { MyMap } from "@/components/ui";
 import HeroVdo from "../../../public/SmartkeyHeroVdo.mp4";
+import GoogleReviewsCarousel from "@/components/reviews/GoogleReviewsCarousel";
+import SocialMediaGallery from "@/components/socialMedia/SocialMediaGallery";
 
 const steps = [
   {
@@ -61,6 +63,32 @@ const faqData = [
   },
 ];
 
+const socialMediaPosts = [
+  {
+    id: 1,
+    image: "/images/social/post-1.jpg",
+    link: "https://www.instagram.com/your-company/",
+    alt: "Company social media post",
+  },
+  {
+    id: 2,
+    image: "/images/social/post-2.jpg",
+    link: "https://www.instagram.com/your-company/",
+    alt: "Company social media post",
+  },
+  {
+    id: 3,
+    image: "/images/social/post-3.jpg",
+    link: "https://www.linkedin.com/company/your-company/",
+    alt: "Company LinkedIn post",
+  },
+  {
+    id: 4,
+    image: "/images/social/post-4.jpg",
+    link: "https://www.facebook.com/your-company/",
+    alt: "Company Facebook post",
+  },
+];
 
 
 const HomePage = () => {
@@ -168,6 +196,16 @@ const HomePage = () => {
         title="Our Property Management Process"
         description="Our property management process follows a defined, step-by-step structure designed to protect rental income and maintain operational control. From initial property review to system setup and daily execution, each stage is documented and coordinated. This structured approach ensures consistency, accountability and long-term stability for every property we manage."
         steps={steps}
+      />
+
+      <GoogleReviewsCarousel 
+      
+      />
+
+      <SocialMediaGallery 
+        title="See what all the talk is about!"
+        subtitle="Transformative client experience from all around the globe"
+        cards={socialMediaPosts}
       />
 
       {/* FAQ */}
