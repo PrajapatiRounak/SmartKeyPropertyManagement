@@ -5,8 +5,7 @@ import ScrollingSec from "../../components/scrollingSec/index.jsx";
 import FooterCTA from "@/components/footerCTA/FooterCTA";
 import FAQ from "../../components/faq/index.jsx";
 import { MyMap } from "@/components/ui";
-import HeroVdo from "../../../public/SmartkeyHeroVdo.mp4";
-import GoogleReviewsCarousel from "@/components/reviews/GoogleReviewsCarousel";
+import GoogleReviews from "@/components/reviews/GoogleReviews";
 import SocialMediaGallery from "@/components/socialMedia/SocialMediaGallery";
 
 const steps = [
@@ -96,10 +95,10 @@ const HomePage = () => {
     <>
       <Hero 
       backgroundType="video"
-      backgroundSrc={HeroVdo}
+      backgroundSrc='https://res.cloudinary.com/kj98z6s1/video/upload/v1793374837/SmartkeyHeroVdo.mp4'
       title={"The Key to Hassle-Free Property Management"}
       buttonText="Schedule Free Consultation"
-      buttonLink="/contact"
+      buttonLink="/contact-us"
       />
       <main className="bg-white text-[#0f2742]">
         {/* Home Page Property Management */}
@@ -119,7 +118,7 @@ const HomePage = () => {
 
                 <div className="mt-8 flex justify-center">
                     <a
-                        href="/contact"
+                        href="/contact-us"
                         className="inline-block bg-[#1f83c5] text-white font-semibold text-sm sm:text-base px-7 sm:px-10 py-4 rounded-3xl hover:bg-[#176da6] transition"
                     >
                         Request a Property Consultation
@@ -198,15 +197,15 @@ const HomePage = () => {
         steps={steps}
       />
 
-      <GoogleReviewsCarousel 
-      
+      <GoogleReviews 
+      duration={40}
       />
 
-      <SocialMediaGallery 
+      {/* <SocialMediaGallery 
         title="See what all the talk is about!"
         subtitle="Transformative client experience from all around the globe"
         cards={socialMediaPosts}
-      />
+      /> */}
 
       {/* FAQ */}
       <FAQ
@@ -221,7 +220,7 @@ const HomePage = () => {
       // backgroundSrc={'https://res.cloudinary.com/kj98z6s1/image/upload/v1793208101/Footer_SamrtKey.avif'}
       title={'Own Property? We Make Managing It Effortless.'}
       buttonText='Schedule Free Consultation'
-      buttonLink='/contact'
+      buttonLink='/contact-us'
       />
     </>
   );
